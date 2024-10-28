@@ -30,13 +30,15 @@ export default function Header() {
     const router = useRouter();
 
     const [showSidebar, setShowSidebar] = useState(false);
+    const [currentPage, setCurrentPage] = useState(window.location.pathname);
 
     useEffect(() => {
         setShowSidebar(false);
-    }, []);
+        setCurrentPage(window.location.pathname);
+    }, [window.location.pathname]);
 
     return (
-        <div className="w-full h-[60px] flex flex-row justify-start items-center px-3 py-2">
+        <div className="w-full h-[60px] flex flex-row justify-start items-center px-3 py-2 fixed top-0 left-0 bg-gradient-to-r from-[#b9f1fb] to-[#e1f3f8] z-20">
             <div className="flex flex-row h-full w-auto">
                 <Image 
                     src={Logo}
@@ -50,11 +52,11 @@ export default function Header() {
                 </div>
             </div>
 
-            <div className={`w-auto h-full flex flex-row gap-x-6 ml-auto ${oswald.className} text-md uppercase text-primaryTextColor justify-start items-center pr-4 max-lg:hidden pt-2`}>
+            <div className={`w-auto h-full flex flex-row gap-x-6 ml-auto ${oswald.className} text-md uppercase text-primaryTextColor justify-start items-center pr-4 max-lg:hidden`}>
                 {navItems.map((item, index) => (
                     <div key={index} className="group cursor-pointer flex flex-col items-center" onClick={() => { router.push(item.href) }}>
                         <p>{item.label}</p>
-                        <hr className={`w-full h-1 border-primaryTextColor bg-primaryTextColor transform group-hover:scale-x-100 transition-transform duration-300 ${item.href === window.location.pathname ? 'scale-x-100' : 'scale-x-0'}`} />
+                        <hr className={`w-full h-1 border-primaryTextColor bg-primaryTextColor transform group-hover:scale-x-100 transition-transform duration-300 ${item.href === currentPage ? 'scale-x-100' : 'scale-x-0'}`} />
                     </div>
                 ))}
 
@@ -80,7 +82,7 @@ export default function Header() {
 
                 <div className={`flex flex-col gap-y-2 py-2 justify-start items-start w-full h-auto text-primaryTextColor ${oswald.className} text-md capitalize`}>
                     {navItems.map((item, index) => (
-                        <p key={index} className={`cursor-pointer hover:bg-slate-200 w-full p-2 ${item.href === window.location.pathname ? 'bg-slate-200' : 'bg-white'}`} onClick={() => {router.push(item.href)}}>{item.label}</p>
+                        <p key={index} className={`cursor-pointer hover:bg-slate-200 w-full p-2 ${item.href === currentPage ? 'bg-slate-200' : 'bg-white'}`} onClick={() => {router.push(item.href)}}>{item.label}</p>
                     ))}
                 </div>
             </div>

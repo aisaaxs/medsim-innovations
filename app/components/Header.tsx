@@ -30,12 +30,15 @@ export default function Header() {
     const router = useRouter();
 
     const [showSidebar, setShowSidebar] = useState(false);
-    const [currentPage, setCurrentPage] = useState(window.location.pathname);
+    const [currentPage, setCurrentPage] = useState("");
 
     useEffect(() => {
         setShowSidebar(false);
-        setCurrentPage(window.location.pathname);
-    }, [window.location.pathname]);
+        
+        if (typeof window !== "undefined") {
+            setCurrentPage(window.location.pathname);
+        }
+    }, []);
 
     return (
         <div className="w-full h-[60px] flex flex-row justify-start items-center px-3 py-2 fixed top-0 left-0 bg-gradient-to-r from-[#b9f1fb] to-[#e1f3f8] z-20">
@@ -59,8 +62,6 @@ export default function Header() {
                         <hr className={`w-full h-1 border-primaryTextColor bg-primaryTextColor transform group-hover:scale-x-100 transition-transform duration-300 ${item.href === currentPage ? 'scale-x-100' : 'scale-x-0'}`} />
                     </div>
                 ))}
-
-                <FontAwesomeIcon icon={faSearch} className="text-primaryTextColor w-5 h-5 cursor-pointer" />
             </div>
 
             <div className="lg:hidden ml-auto flex justify-center items-center">

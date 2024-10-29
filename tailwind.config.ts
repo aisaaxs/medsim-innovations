@@ -8,7 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      
+      colors: {
+        primaryTextColor: 'rgb(27, 37, 47)',
+      },
     },
   },
   plugins: [],

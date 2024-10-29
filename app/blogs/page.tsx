@@ -6,6 +6,7 @@ import Image from "next/image";
 import { Racing_Sans_One } from "next/font/google";
 import BlogsBgImage from "../images/Blogs Photos Suzy Hazelwood.jpg";
 import { ChevronRight } from "lucide-react";
+import blogsImage from "../images/Blogs Photos Suzy Hazelwood.jpg";
 
 const racing_sans_one = Racing_Sans_One({
   weight: '400',
@@ -14,37 +15,37 @@ const racing_sans_one = Racing_Sans_One({
 
 const blogs = [
   {
-    image: require("../images/Blogs Photos Suzy Hazelwood.jpg"),
+    image: blogsImage,
     title: "blog title",
     snippet: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tristique, sem vel scelerisque accumsan, nulla sem ornare diam, non rutrum elit mauris ut risus.",
     link: "/blog-link",
   },
   {
-    image: require("../images/Blogs Photos Suzy Hazelwood.jpg"),
+    image: blogsImage,
     title: "blog title",
     snippet: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tristique, sem vel scelerisque accumsan, nulla sem ornare diam, non rutrum elit mauris ut risus.",
     link: "/blog-link",
   },
   {
-    image: require("../images/Blogs Photos Suzy Hazelwood.jpg"),
+    image: blogsImage,
     title: "blog title",
     snippet: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tristique, sem vel scelerisque accumsan, nulla sem ornare diam, non rutrum elit mauris ut risus.",
     link: "/blog-link",
   },
   {
-    image: require("../images/Blogs Photos Suzy Hazelwood.jpg"),
+    image: blogsImage,
     title: "blog title",
     snippet: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tristique, sem vel scelerisque accumsan, nulla sem ornare diam, non rutrum elit mauris ut risus.",
     link: "/blog-link",
   },
   {
-    image: require("../images/Blogs Photos Suzy Hazelwood.jpg"),
+    image: blogsImage,
     title: "blog title",
     snippet: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tristique, sem vel scelerisque accumsan, nulla sem ornare diam, non rutrum elit mauris ut risus.",
     link: "/blog-link",
   },
   {
-    image: require("../images/Blogs Photos Suzy Hazelwood.jpg"),
+    image: blogsImage,
     title: "blog title",
     snippet: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tristique, sem vel scelerisque accumsan, nulla sem ornare diam, non rutrum elit mauris ut risus.",
     link: "/blog-link",

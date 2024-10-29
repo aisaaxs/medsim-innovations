@@ -50,8 +50,8 @@ export default function Header() {
     }, [showSidebar]);
 
     return (
-        <div className="w-full h-[60px] flex flex-row justify-between items-center px-3 py-2 fixed top-0 left-0 bg-gradient-to-r from-[#b9f1fb] to-[#e1f3f8] z-20 shadow-md">
-            <div className="flex flex-row items-center">
+        <div className="w-full h-[60px] flex flex-row justify-between items-center px-3 py-2 fixed top-0 left-0 bg-gradient-to-r from-[#b9f1fb] to-[#e1f3f8] z-20">
+            <div className="flex flex-row items-center" onClick={() => {router.push('/')}}>
                 <Image 
                     src={Logo}
                     width={50}

@@ -87,7 +87,7 @@ export default function Home() {
     <div className="w-full min-h-screen bg-gradient-to-r from-[#b9f1fb] to-[#e1f3f8] flex flex-col">
       <Header />
 
-      <div className="relative w-full lg:h-[80vh] md:h-[60vh] h-[40vh] flex-shrink-0">
+      <div className="relative w-full lg:h-[80vh] md:h-[70vh] h-[60vh] flex-shrink-0">
         <Image 
           src={Syringe}
           alt="Syringe"
@@ -95,7 +95,7 @@ export default function Home() {
           objectFit="cover"
           className="w-full h-full"
         />
-        <div className={`absolute top-1/2 left-0 right-0 bg-gradient-to-r from-[rgba(27,37,47,0.7)] via-[rgba(0,0,0,0.05)] to-transparent transform -translate-y-1/2 flex flex-col justify-center items-start text-white lg:text-7xl md:text-6xl sm:text-5xl text-4xl gap-y-6 px-6 py-8 ${racing_sans_one.className} uppercase`}>
+        <div className={`absolute top-1/2 left-0 right-0 bg-gradient-to-r from-[rgba(27,37,47,0.7)] via-[rgba(0,0,0,0.05)] to-transparent transform -translate-y-1/2 flex flex-col justify-center items-start text-white lg:text-7xl md:text-6xl sm:text-5xl text-3xl gap-y-6 px-6 py-8 ${racing_sans_one.className} uppercase`}>
           <h1 className="text-left"><span className="text-red-500">realistic</span> training</h1>
           <h1 className="text-left"><span className="text-red-500">affordable</span> solutions</h1>
           <h1 className="text-left"><span className="text-red-500">better</span> care</h1>

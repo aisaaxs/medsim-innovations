@@ -4,7 +4,7 @@ import Image from "next/image";
 import Logo from "../images/Med Sim Logo.png";
 import { Oswald, Goldman } from 'next/font/google';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch, faBars, faX } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faX } from "@fortawesome/free-solid-svg-icons";
 import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 

@@ -116,7 +116,7 @@ export default function Home() {
 
         <div className="w-full h-auto flex justify-center items-center pt-28 px-6">
           <h3 className={`text-3xl text-primaryTextColor capitalize ${oswald.className} text-center`}>
-            Hands-on training isn't just practice—it's protection. Each simulation brings us closer to safer patient outcomes.
+            Hands-on training isn&#39;t just practice—it&#39;s protection. Each simulation brings us closer to safer patient outcomes.
           </h3>
         </div>
       </div>

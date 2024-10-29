@@ -54,7 +54,7 @@ export default function AboutUs() {
           <div className="w-full lg:w-1/2 p-4 bg-yellow-400 rounded-lg shadow-lg hover:shadow-lg transition-shadow duration-300">
             <h3 className={`text-2xl mb-4 text-primaryTextColor ${racing_sans_one.className}`}>Mission Statement</h3>
             <p className="text-primaryTextColor">
-              To revolutionize healthcare education by providing cutting-edge medical simulation technology that empowers healthcare professionals' clinical competency through simulation solutions for high standards of patient care.
+              To revolutionize healthcare education by providing cutting-edge medical simulation technology that empowers healthcare professionals&#39; clinical competency through simulation solutions for high standards of patient care.
             </p>
           </div>
           <div className="w-full lg:w-1/2 p-4 bg-green-400 rounded-lg shadow-lg hover:shadow-lg transition-shadow duration-300">

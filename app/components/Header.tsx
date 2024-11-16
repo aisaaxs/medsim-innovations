@@ -5,7 +5,7 @@ import Logo from "../images/Med Sim Logo.png";
 import { Oswald, Goldman } from 'next/font/google';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faX } from "@fortawesome/free-solid-svg-icons";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 
 const oswald = Oswald({
@@ -28,20 +28,10 @@ const navItems = [
 
 export default function Header() {
     const router = useRouter();
-
+    const pathname = usePathname(); // Get the current pathname
     const [showSidebar, setShowSidebar] = useState(false);
-    const [currentPage, setCurrentPage] = useState("");
 
     useEffect(() => {
-        setShowSidebar(false);
-        
-        if (typeof window !== "undefined") {
-            setCurrentPage(window.location.pathname);
-        }
-    }, []);
-
-    useEffect(() => {
-        // Prevent scrolling when the sidebar is open
         if (showSidebar) {
             document.body.style.overflow = 'hidden';
         } else {
@@ -50,8 +40,8 @@ export default function Header() {
     }, [showSidebar]);
 
     return (
-        <div className="w-full h-[60px] flex flex-row justify-between items-center px-3 py-2 fixed top-0 left-0 bg-gradient-to-r from-[#b9f1fb] to-[#e1f3f8] z-20">
-            <div className="flex flex-row items-center" onClick={() => {router.push('/')}}>
+        <div className="w-full h-[80px] flex flex-row justify-between items-center px-6 py-2 fixed top-0 left-0 bg-gray-900 bg-opacity-70 z-20">
+            <div className="flex flex-row items-center cursor-pointer" onClick={() => { router.push('/') }}>
                 <Image 
                     src={Logo}
                     width={50}
@@ -59,22 +49,22 @@ export default function Header() {
                     alt="MedSim Innovations Logo"
                 />
 
-                <h1 className={`ml-2 text-2xl ${goldman.className} text-primaryTextColor max-sm:text-xl`}>
+                <h1 className={`ml-2 text-3xl ${goldman.className} text-white`}>
                     MedSim Innovations
                 </h1>
             </div>
 
-            <div className={`hidden lg:flex gap-x-6 ${oswald.className} text-md uppercase text-primaryTextColor items-center`}>
+            <div className={`hidden lg:flex gap-x-6 ${oswald.className} text-md uppercase text-white items-center`}>
                 {navItems.map((item, index) => (
                     <div key={index} className="group cursor-pointer flex flex-col items-center" onClick={() => { router.push(item.href) }}>
                         <p>{item.label}</p>
-                        <hr className={`w-full h-1 border-primaryTextColor bg-primaryTextColor transform group-hover:scale-x-100 transition-transform duration-300 ${item.href === currentPage ? 'scale-x-100' : 'scale-x-0'}`} />
+                        <hr className={`w-full h-1 transform group-hover:scale-x-100 transition-transform duration-300 ${item.href === pathname ? 'scale-x-100 border-yellow-400 bg-yellow-400' : 'scale-x-0 border-white bg-white'}`} />
                     </div>
                 ))}
             </div>
 
             <div className="lg:hidden flex justify-center items-center">
-                <FontAwesomeIcon icon={faBars} className="text-primaryTextColor text-2xl cursor-pointer" onClick={() => {
+                <FontAwesomeIcon icon={faBars} className="text-white text-2xl cursor-pointer" onClick={() => {
                     setShowSidebar(true);
                 }} />
             </div>
@@ -87,9 +77,9 @@ export default function Header() {
 
                 <hr className="w-[95%] border-slate-500" />
 
-                <div className={`flex flex-col gap-y-2 py-4 justify-start items-start w-full text-primaryTextColor ${oswald.className} text-lg capitalize`}>
+                <div className={`flex flex-col gap-y-2 py-4 justify-start items-start w-full ${showSidebar ? "text-primaryTextColor" : "text-white"} ${oswald.className} text-lg capitalize`}>
                     {navItems.map((item, index) => (
-                        <p key={index} className={`cursor-pointer hover:bg-slate-200 w-full p-4 ${item.href === currentPage ? 'bg-slate-200' : 'bg-white'}`} onClick={() => {
+                        <p key={index} className={`cursor-pointer hover:bg-slate-200 w-full p-4 ${item.href === pathname ? 'bg-yellow-400' : 'bg-white'}`} onClick={() => {
                             setShowSidebar(false);
                             router.push(item.href);
                         }}>{item.label}</p>

@@ -1,69 +1,65 @@
 "use client";
 
-import Header from "../components/Header";
-import Footer from "../components/Footer";
 import Image from "next/image";
 import { Racing_Sans_One } from "next/font/google";
 import BlogsBgImage from "../images/Blogs Photos Suzy Hazelwood.jpg";
-import { ChevronRight } from "lucide-react";
 import blogsImage from "../images/Blogs Photos Suzy Hazelwood.jpg";
 
 const racing_sans_one = Racing_Sans_One({
-  weight: '400',
-  subsets: ['latin'],
+  weight: "400",
+  subsets: ["latin"],
 });
 
 const blogs = [
   {
     image: blogsImage,
-    title: "blog title",
-    snippet: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tristique, sem vel scelerisque accumsan, nulla sem ornare diam, non rutrum elit mauris ut risus.",
-    link: "/blog-link",
+    title: "How Technology is Shaping Healthcare Training",
+    snippet: "Explore how cutting-edge tools and simulation technologies are revolutionizing healthcare education.",
+    link: "/blog/technology-healthcare-training",
   },
   {
     image: blogsImage,
-    title: "blog title",
-    snippet: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tristique, sem vel scelerisque accumsan, nulla sem ornare diam, non rutrum elit mauris ut risus.",
-    link: "/blog-link",
+    title: "Why Realistic Simulators Matter in Medical Training",
+    snippet: "Discover the critical role of lifelike simulations in preparing healthcare professionals for real-world challenges.",
+    link: "/blog/realistic-simulators",
   },
   {
     image: blogsImage,
-    title: "blog title",
-    snippet: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tristique, sem vel scelerisque accumsan, nulla sem ornare diam, non rutrum elit mauris ut risus.",
-    link: "/blog-link",
+    title: "Top Trends in Nursing Education for 2024",
+    snippet: "Stay ahead with these emerging trends transforming nursing education and practice.",
+    link: "/blog/nursing-education-trends",
   },
   {
     image: blogsImage,
-    title: "blog title",
-    snippet: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tristique, sem vel scelerisque accumsan, nulla sem ornare diam, non rutrum elit mauris ut risus.",
-    link: "/blog-link",
+    title: "The Importance of Continuous Medical Learning",
+    snippet: "Learn why ongoing education is crucial for healthcare professionals in a fast-changing world.",
+    link: "/blog/continuous-medical-learning",
   },
   {
     image: blogsImage,
-    title: "blog title",
-    snippet: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tristique, sem vel scelerisque accumsan, nulla sem ornare diam, non rutrum elit mauris ut risus.",
-    link: "/blog-link",
+    title: "How to Choose the Right Medical Training Tools",
+    snippet: "A comprehensive guide to selecting tools that align with your training goals.",
+    link: "/blog/medical-training-tools",
   },
   {
     image: blogsImage,
-    title: "blog title",
-    snippet: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tristique, sem vel scelerisque accumsan, nulla sem ornare diam, non rutrum elit mauris ut risus.",
-    link: "/blog-link",
+    title: "The Future of Healthcare Simulation in 2024",
+    snippet: "An in-depth look at how healthcare simulation is evolving and its impact on patient care.",
+    link: "/blog/healthcare-simulation-future",
   },
 ];
 
 export default function BlogsPage(): JSX.Element {
   return (
     <div className="w-full min-h-screen bg-white flex flex-col">
-      <Header />
 
-      <div className="relative w-full h-[70vh] flex items-center justify-center bg-gradient-to-tr from-[#009cdb] to-[#00c7e2]">
+      <div className="relative w-full h-screen flex items-center justify-center bg-gray-900">
         <Image
           src={BlogsBgImage}
-          alt="Our Blog"
+          alt="Our Blogs"
           layout="fill"
           objectFit="cover"
-          className="opacity-60"
+          className="opacity-80"
         />
         <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center">
           <h1 className={`text-white uppercase text-center mb-6 ${racing_sans_one.className} text-6xl sm:text-7xl md:text-8xl lg:text-9xl`}>
@@ -72,44 +68,69 @@ export default function BlogsPage(): JSX.Element {
         </div>
       </div>
 
+      <div className="bg-gray-900 py-12 px-4">
+        <div className="container mx-auto flex justify-center gap-4">
+          <input
+            type="text"
+            placeholder="Search Blogs"
+            className="w-full md:w-2/3 lg:w-1/2 p-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400"
+          />
+          <button className="px-6 py-3 bg-green-400 text-gray-900 font-semibold rounded-lg hover:bg-green-500 transition duration-300">
+            Search
+          </button>
+        </div>
+      </div>
+
       <div className="container mx-auto py-16 px-4">
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <ul className="space-y-8">
           {blogs.map((blog, index) => (
-            <div
+            <li
               key={index}
-              className="group bg-white rounded-xl overflow-hidden shadow-xl transform hover:scale-105 transition-all duration-300 hover:shadow-2xl"
+              className="flex flex-col lg:flex-row gap-8 bg-white shadow-md hover:shadow-2xl hover:bg-gray-100 rounded-lg overflow-hidden transition duration-300 border-t-8 border-gray-800"
             >
-              <div className="relative w-full h-56">
+              <div className="relative w-full lg:w-1/3 h-64">
                 <Image
                   src={blog.image}
                   alt={blog.title}
                   layout="fill"
                   className="object-cover"
                 />
-                <div className="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-40 transition duration-300"></div>
               </div>
-              <div className="flex flex-col">
-                <div className="w-full h-full px-6 py-4 pb-10">
-                    <h2 className="text-2xl font-semibold text-primaryTextColor mb-2 group-hover:text-blue-600 transition capitalize">
+
+              <div className="lg:w-2/3 flex flex-col justify-between px-6 py-4">
+                <div>
+                  <h2 className="text-2xl font-bold text-gray-800 mb-2 transition">
                     {blog.title}
-                    </h2>
-                    <p className="text-primaryTextColor mb-4 capitalize">{blog.snippet}</p>
+                  </h2>
+                  <p className="text-gray-800">{blog.snippet}</p>
                 </div>
-            
-                <div className="w-full h-auto absolute bottom-2 left-0 flex flex-row px-6">
-                    <a href={blog.link} className="text-blue-600 font-semibold hover:underline capitalize">
-                        Read More
-                    </a>
-
-                    <ChevronRight className="text-blue-600 ml-2" />
+                <div className="mt-4">
+                  <a
+                    href={blog.link}
+                    className="text-gray-800 font-semibold hover:underline flex items-center"
+                  >
+                    Read More
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth="2"
+                      stroke="currentColor"
+                      className="ml-2 w-5 h-5"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M17 8l4 4m0 0l-4 4m4-4H3"
+                      />
+                    </svg>
+                  </a>
                 </div>
               </div>
-            </div>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
-
-      <Footer />
     </div>
   );
 }

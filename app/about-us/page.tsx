@@ -3,18 +3,13 @@
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLightbulb, faTools, faCheckCircle, faGlobe, faUsers } from "@fortawesome/free-solid-svg-icons";
-import { Racing_Sans_One, Oswald } from "next/font/google";
+import { Racing_Sans_One } from "next/font/google";
 import AboutUsImg from "../images/Our Team Photos Anthonyshkraba Production.jpg";
 import NursingSchool from "../images/Nursing Students Thirdman.jpg";
 import MedicalSchool from "../images/Medical Student Photo by Artempodrez.jpg";
 import MedInstitution from "../images/Doctors Photos from Pexels.jpg";
 
 const racing_sans_one = Racing_Sans_One({
-  weight: '400',
-  subsets: ['latin'],
-});
-
-const oswald = Oswald({
   weight: '400',
   subsets: ['latin'],
 });

@@ -1,6 +1,7 @@
 import { Oswald } from 'next/font/google';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookF, faInstagram, faLinkedinIn, faYoutube, faTiktok } from '@fortawesome/free-brands-svg-icons';
+import Link from 'next/link';
 
 const oswald = Oswald({
     weight: '500',
@@ -54,7 +55,9 @@ export default function Footer() {
                     <ul className="text-sm space-y-3 text-center">
                         {aboutLinks.map((item, index) => (
                             <li key={index}>
-                                <a href={item.link} className="hover:text-white">{item.label}</a>
+                                <Link href={item.link} className="hover:text-white">
+                                    {item.label}
+                                </Link>
                             </li>
                         ))}
                     </ul>
@@ -85,11 +88,11 @@ export default function Footer() {
 
             <div className="container mx-auto px-4 flex flex-col lg:flex-row justify-center lg:justify-between items-center text-sm gap-y-4 gap-x-8 text-center lg:text-left">
                 <p className={`lg:mb-0 ${oswald.className}`}>
-                    &copy; 2024 <a href="https://www.medsiminnovations.com" target="_blank" className="text-white underline">MedSim Innovations</a> - All Rights Reserved.
+                    &copy; 2024 <Link href="https://www.medsiminnovations.com" className="text-white underline" target="_blank">MedSim Innovations</Link> - All Rights Reserved.
                 </p>
                 <div className="flex space-x-4">
-                    <a href="/" className="hover:text-white transition-colors duration-200">Privacy Policy</a>
-                    <a href="/" className="hover:text-white transition-colors duration-200">Terms of Service</a>
+                    <Link href="/" className="hover:text-white transition-colors duration-200">Privacy Policy</Link>
+                    <Link href="/" className="hover:text-white transition-colors duration-200">Terms of Service</Link>
                 </div>
             </div>
         </footer>

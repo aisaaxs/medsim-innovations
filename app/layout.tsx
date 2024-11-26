@@ -7,6 +7,8 @@ import ClientRoot from "../components/ClientRoot";
 export const metadata: Metadata = {
   title: "MedSim Innovations",
   description: "An affordable provider of state-of-the-art medical simulators and training equipment.",
+  applicationName: "MedSim Innovations",
+  authors: [{ name: "MedSim Innovations", url: "https://www.medsiminnovations.com" }],
 };
 
 export default function RootLayout({

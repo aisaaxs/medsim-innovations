@@ -22,7 +22,7 @@ const navItems = [
     { label: 'home', href: '/' },
     { label: 'about us', href: '/about-us' },
     { label: 'our products', href: '/our-products' },
-    { label: 'blogs', href: '/blogs' },
+    // { label: 'blogs', href: '/blogs' },
     { label: 'contact us', href: '/contact-us' },
 ];
 
@@ -39,8 +39,26 @@ export default function Header() {
         }
     }, [showSidebar]);
 
+    const [isScrolled, setIsScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+        if (window.scrollY > window.innerHeight - 100) {
+            setIsScrolled(true);
+        } else {
+            setIsScrolled(false);
+        }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+        window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
     return (
-        <div className="w-full h-[80px] flex flex-row justify-between items-center px-6 py-2 fixed top-0 left-0 bg-gray-900 bg-opacity-70 z-20">
+        <div className={`w-full h-[80px] flex flex-row justify-between items-center px-6 py-2 fixed top-0 left-0 transition-all duration-300 ease-in-out ${isScrolled ? "bg-gray-900" : "bg-transparent"} bg-opacity-70 z-20`}>
             <div className="flex flex-row items-center cursor-pointer" onClick={() => { router.push('/') }}>
                 <Image 
                     src={Logo}
@@ -77,9 +95,9 @@ export default function Header() {
 
                 <hr className="w-[95%] border-slate-500" />
 
-                <div className={`flex flex-col gap-y-2 py-4 justify-start items-start w-full ${showSidebar ? "text-primaryTextColor" : "text-white"} ${oswald.className} text-lg capitalize`}>
+                <div className={`flex flex-col py-4 justify-start items-start w-full text-primaryTextColor ${oswald.className} text-lg capitalize`}>
                     {navItems.map((item, index) => (
-                        <p key={index} className={`cursor-pointer hover:bg-slate-200 w-full p-4 ${item.href === pathname ? 'bg-yellow-400' : 'bg-white'}`} onClick={() => {
+                        <p key={index} className={`cursor-pointer w-full p-4 ${item.href === pathname ? 'bg-yellow-400' : 'bg-white hover:bg-gray-200'}`} onClick={() => {
                             setShowSidebar(false);
                             router.push(item.href);
                         }}>{item.label}</p>

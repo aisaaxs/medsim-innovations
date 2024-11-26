@@ -2,11 +2,7 @@
 
 import Image from "next/image";
 import { Racing_Sans_One, Oswald } from "next/font/google";
-import OurProductsImg from "../images/Medical Products Photo.jpg";
-import SutureKitImg from "../images/Medical Products Photo.jpg";
-import ROMAImg from "../images/Medical Products Photo.jpg";
-import StudentBagImg from "../images/Medical Products Photo.jpg";
-import CommunityBagImg from "../images/Medical Products Photo.jpg";
+import OurProductsImg from "../../images/pexels-shox-28271058.jpg";
 
 const racing_sans_one = Racing_Sans_One({
   weight: '400',
@@ -23,25 +19,25 @@ export default function ProductsPage() {
     {
       title: "Suture Kit",
       description: "An essential tool for medical and nursing students to practice and refine suturing skills.",
-      image: SutureKitImg,
+      image: OurProductsImg,
       link: "/products/suture-kit",
     },
     {
       title: "ROMA Kit",
       description: "Routes of Medication Administration (ROMA) kit to simulate real-life scenarios for medication delivery.",
-      image: ROMAImg,
+      image: OurProductsImg,
       link: "/products/roma-kit",
     },
     {
       title: "Student Bag",
       description: "A durable and practical bag for nursing students to carry essential items for academic and clinical use.",
-      image: StudentBagImg,
+      image: OurProductsImg,
       link: "/products/student-bag",
     },
     {
       title: "Community Bag",
       description: "Designed for versatility and reliability, ideal for professionals working in community healthcare.",
-      image: CommunityBagImg,
+      image: OurProductsImg,
       link: "/products/community-bag",
     },
   ];
@@ -54,7 +50,6 @@ export default function ProductsPage() {
           alt="Our Products"
           layout="fill"
           objectFit="cover"
-          className="opacity-80"
         />
         <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center">
           <h1 className={`text-white uppercase text-center mb-6 ${racing_sans_one.className} text-6xl sm:text-7xl md:text-8xl lg:text-9xl`}>

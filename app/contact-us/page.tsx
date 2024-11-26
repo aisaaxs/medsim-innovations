@@ -3,7 +3,7 @@
 import { Racing_Sans_One, Oswald } from "next/font/google";
 import { useState } from "react";
 import Image from "next/image";
-import ContactUsImg from "../images/Contact Us Image.png";
+import ContactUsImg from "../../images/pexels-alex-andrews-271121-821754.jpg";
 
 const racing_sans_one = Racing_Sans_One({
   weight: "400",
@@ -22,6 +22,9 @@ export default function ContactUs() {
     message: "",
   });
 
+  const [status, setStatus] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
@@ -29,10 +32,42 @@ export default function ContactUs() {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("Form submitted: ", formData);
-    setFormData({ name: "", email: "", message: "" });
+    setIsLoading(true); // Set loading state to true
+
+    const formDataToSend = new FormData();
+    formDataToSend.append("formType", "query");
+    formDataToSend.append("Name", formData.name);
+    formDataToSend.append("Email", formData.email);
+    formDataToSend.append("Message", formData.message);
+
+    try {
+      const response = await fetch(
+        "https://script.google.com/macros/s/AKfycbwP30-wbN5awpwOSBgExwroXGzdjzcLjn4m_fXuDIvknqnROYr_MMmNPcj7tn-xuzz_PQ/exec",
+        {
+          method: "POST",
+          body: formDataToSend,
+        }
+      );
+
+      const result = await response.text();
+
+      if (result === "success") {
+        setStatus("We have received your message. You can expect a response from us in 2-3 business days!");
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        setStatus("There was an issue submitting the form. Please try again.");
+      }
+    } catch (error) {
+      setStatus("Failed to submit the form. Please try again later.");
+    } finally {
+      setIsLoading(false);
+
+      setTimeout(() => {
+        setStatus(null);
+      }, 3000);
+    }
   };
 
   return (
@@ -43,7 +78,6 @@ export default function ContactUs() {
           alt="Contact Us"
           layout="fill"
           objectFit="cover"
-          className="opacity-80"
         />
         <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center">
           <h1
@@ -55,7 +89,7 @@ export default function ContactUs() {
       </div>
 
       <div className="container mx-auto py-12 px-4 md:px-8 flex flex-col md:flex-row gap-12">
-        <div className="flex-1 bg-gray-100 border-2 border-gray-900 p-6 rounded-xl shadow-lg">
+        <div className="flex-1 bg-gray-50 border-2 border-gray-900 p-6 rounded-xl shadow-lg">
           <h2
             className={`text-4xl mb-6 ${racing_sans_one.className} text-gray-900`}
           >
@@ -94,7 +128,7 @@ export default function ContactUs() {
           </div>
         </div>
 
-        <div className="flex-1 bg-gray-100 border-2 border-gray-900 p-6 rounded-xl shadow-lg">
+        <div className="flex-1 bg-gray-50 border-2 border-gray-900 p-6 rounded-xl shadow-lg">
           <h2
             className={`text-4xl mb-6 ${racing_sans_one.className} text-gray-900`}
           >
@@ -146,10 +180,15 @@ export default function ContactUs() {
             <button
               type="submit"
               className="bg-gray-900 text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition duration-300"
+              disabled={isLoading}
             >
-              Send Message
+              {isLoading ? "Submitting..." : "Send Message"}
             </button>
           </form>
+
+          {status && (
+            <p className="mt-4 text-gray-900 text-center font-medium">{status}</p>
+          )}
         </div>
       </div>
 

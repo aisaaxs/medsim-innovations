@@ -32,12 +32,12 @@ export default function Footer() {
         name: "",
         email: "",
     });
-    const [status, setStatus] = useState<string | null>(null); // Status for success or error
-    const [isLoading, setIsLoading] = useState<boolean>(false); // Loading state
+    const [status, setStatus] = useState<string | null>(null);
+    const [isLoading, setIsLoading] = useState<boolean>(false);
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        setIsLoading(true); // Set loading state to true
+        setIsLoading(true);
 
         const { name, email } = formData;
 
@@ -56,19 +56,19 @@ export default function Footer() {
 
             if (result === 'success') {
                 setStatus('Thank you for subscribing!');
-                setFormData({ name: "", email: "" }); // Clear the input fields
+                setFormData({ name: "", email: "" });
             } else {
                 setStatus('Something went wrong, please try again.');
             }
         } catch (error) {
+            console.error("Form submission error: ", error);
             setStatus('Failed to submit, please try again later.');
         } finally {
-            setIsLoading(false); // Set loading state to false when done
+            setIsLoading(false);
 
-            // Clear the status message after 3 seconds
             setTimeout(() => {
                 setStatus(null);
-            }, 3000); // Clears the message after 3 seconds
+            }, 3000);
         }
     };
 

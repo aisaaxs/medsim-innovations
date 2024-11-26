@@ -34,7 +34,7 @@ export default function ContactUs() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setIsLoading(true); // Set loading state to true
+    setIsLoading(true);
 
     const formDataToSend = new FormData();
     formDataToSend.append("formType", "query");
@@ -60,6 +60,7 @@ export default function ContactUs() {
         setStatus("There was an issue submitting the form. Please try again.");
       }
     } catch (error) {
+      console.error("Form submission error: ", error);
       setStatus("Failed to submit the form. Please try again later.");
     } finally {
       setIsLoading(false);

@@ -58,7 +58,7 @@ export default function ProductsPage() {
         </div>
       </div>
 
-      <div className="py-16 px-8 bg-gray-100 text-center">
+      <div className="py-16 px-8 bg-gray-100 text-center" id="our-products">
         <h2 className={`text-5xl mb-20 text-gray-900 ${racing_sans_one.className} uppercase`}>
           We Create Tools to Shape Tomorrow&apos;s Caregivers
         </h2>

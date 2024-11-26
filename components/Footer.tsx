@@ -20,11 +20,10 @@ const socialLinks = [
 ];
 
 const aboutLinks = [
-    { label: "Mission & Vision", link: "#" },
-    { label: "Core Values", link: "#" },
-    { label: "Our Clients", link: "#" },
-    { label: "Product Line", link: "#" },
-    { label: "Insights & Blog", link: "#" },
+    { label: "Mission & Vision", link: "/about-us#vision-mission" },
+    { label: "Core Values", link: "/about-us#value-pillars" },
+    { label: "Our Clients", link: "/about-us#our-customers" },
+    { label: "Product Line", link: "/our-products#our-products" },
 ];
 
 export default function Footer() {

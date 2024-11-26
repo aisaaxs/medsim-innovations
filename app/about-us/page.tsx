@@ -38,7 +38,7 @@ export default function AboutUs() {
         </p>
       </div>
 
-      <div className="py-16 bg-gray-900 text-center">
+      <div className="py-16 bg-gray-900 text-center" id="vision-mission">
         <h2 className={`text-5xl mb-12 text-white ${racing_sans_one.className} uppercase`}>Vision & Mission</h2>
         <div className="flex flex-col lg:flex-row justify-center items-center gap-8 px-6 max-w-5xl mx-auto">
           <div className="w-full lg:w-1/2 p-4 bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-500 rounded-lg shadow-lg hover:shadow-lg py-8 transition-shadow duration-300">
@@ -56,7 +56,7 @@ export default function AboutUs() {
         </div>
       </div>
 
-      <div className="py-16 bg-white text-center">
+      <div className="py-16 bg-white text-center" id="value-pillars">
         <h2 className={`text-5xl mb-12 text-gray-900 ${racing_sans_one.className} uppercase`}>Our Value Pillars</h2>
         <div className="flex flex-wrap justify-center gap-12 px-4 max-w-7xl mx-auto">
           {[

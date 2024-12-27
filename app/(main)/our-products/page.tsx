@@ -2,7 +2,11 @@
 
 import Image from "next/image";
 import { Racing_Sans_One, Oswald } from "next/font/google";
-import OurProductsImg from "../../images/pexels-shox-28271058.jpg";
+import OurProductsImg from "../../../images/pexels-shox-28271058.jpg";
+import NurseKitProImg from "../../../images/nurse-kit-pro.png";
+import CommunityBagImg from "../../../images/community-bag.png";
+import SutureKitImg from "../../../images/suture-kit.png";
+import RomaKitImg from "../../../images/roma-kit.png";
 
 const racing_sans_one = Racing_Sans_One({
   weight: '400',
@@ -17,28 +21,32 @@ const oswald = Oswald({
 export default function ProductsPage() {
   const products = [
     {
-      title: "Suture Kit",
-      description: "An essential tool for medical and nursing students to practice and refine suturing skills.",
-      image: OurProductsImg,
-      link: "/products/suture-kit",
-    },
-    {
       title: "ROMA Kit",
       description: "Routes of Medication Administration (ROMA) kit to simulate real-life scenarios for medication delivery.",
-      image: OurProductsImg,
-      link: "/products/roma-kit",
+      image: RomaKitImg,
+      link: "/our-products/roma-kit",
+      backgroundColor: "bg-green-200",
     },
     {
-      title: "Student Bag",
-      description: "A durable and practical bag for nursing students to carry essential items for academic and clinical use.",
-      image: OurProductsImg,
-      link: "/products/student-bag",
+      title: "Nurse Kit Pro",
+      description: "A durable and practical kit for nursing students to carry essential items for academic and clinical use.",
+      image: NurseKitProImg,
+      link: "/our-products/nurse-kit-pro",
+      backgroundColor: "bg-cyan-200",
+    },
+    {
+      title: "Suture Kit",
+      description: "An essential tool for medical and nursing students to practice and refine suturing skills.",
+      image: SutureKitImg,
+      link: "/our-products/suture-kit",
+      backgroundColor: "bg-red-200",
     },
     {
       title: "Community Bag",
       description: "Designed for versatility and reliability, ideal for professionals working in community healthcare.",
-      image: OurProductsImg,
-      link: "/products/community-bag",
+      image: CommunityBagImg,
+      link: "/our-products/community-bag",
+      backgroundColor: "bg-yellow-200",
     },
   ];
 
@@ -66,13 +74,15 @@ export default function ProductsPage() {
           {products.map((product, index) => (
             <div
               key={index}
-              className="bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-300"
+              className={`bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-300`}
             >
-              <Image
-                src={product.image}
-                alt={product.title}
-                className="w-full h-56 object-cover"
-              />
+              <div className={`${product.backgroundColor} px-12`}>
+                <Image
+                  src={product.image}
+                  alt={product.title}
+                  className="w-full h-56 object-fill"
+                />
+              </div>
               <div className="p-6">
                 <h3 className={`text-2xl font-semibold mb-4 text-gray-900 ${oswald.className}`}>
                   {product.title}

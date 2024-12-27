@@ -4,10 +4,10 @@ import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLightbulb, faTools, faCheckCircle, faGlobe, faUsers } from "@fortawesome/free-solid-svg-icons";
 import { Racing_Sans_One } from "next/font/google";
-import AboutUsImg from "../../images/pexels-thisisengineering-3913010 (1).jpg";
-import NursingSchool from "../../images/Nursing Students Thirdman.jpg";
-import MedicalSchool from "../../images/Medical Student Photo by Artempodrez.jpg";
-import MedInstitution from "../../images/Doctors Photos from Pexels.jpg";
+import AboutUsImg from "../../../images/pexels-thisisengineering-3913010 (1).jpg";
+import NursingSchool from "../../../images/Nursing Students Thirdman.jpg";
+import MedicalSchool from "../../../images/Medical Student Photo by Artempodrez.jpg";
+import MedInstitution from "../../../images/Doctors Photos from Pexels.jpg";
 
 const racing_sans_one = Racing_Sans_One({
   weight: '400',

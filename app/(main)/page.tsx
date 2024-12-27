@@ -1,11 +1,11 @@
 "use client";
 
 import Image from "next/image";
-import Syringe from "../images/pexels-jonathanborba-13697925.jpg";
-import AboutUsImg from "../images/pexels-thisisengineering-3913010 (1).jpg";
-import ProductsImg from "../images/pexels-shox-28271058.jpg";
-import CustomersImg from "../images/pexels-rdne-6129507.jpg";
-import ContactUsImg from "../images/Contact Us Image.png";
+import Syringe from "../../images/pexels-jonathanborba-13697925.jpg";
+import AboutUsImg from "../../images/pexels-thisisengineering-3913010 (1).jpg";
+import ProductsImg from "../../images/pexels-shox-28271058.jpg";
+import CustomersImg from "../../images/pexels-rdne-6129507.jpg";
+import ContactUsImg from "../../images/Contact Us Image.png";
 import { Racing_Sans_One, Oswald } from "next/font/google";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUsers, faBox, faMicrochip } from "@fortawesome/free-solid-svg-icons";

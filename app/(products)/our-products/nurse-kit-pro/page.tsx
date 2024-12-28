@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import NurseKitProImg from "../../../../../images/nurse-kit-pro.png";
+import NurseKitProImg from "../../../../images/nurse-kit-pro.png";
 import Image from "next/image";
 
 export default function NurseKitPro() {

@@ -39,26 +39,26 @@ export default function Header() {
         }
     }, [showSidebar]);
 
-    // const [isScrolled, setIsScrolled] = useState(false);
+    const [isScrolled, setIsScrolled] = useState(false);
 
-    // useEffect(() => {
-    //     const handleScroll = () => {
-    //     if (window.scrollY > window.innerHeight - 300) {
-    //         setIsScrolled(true);
-    //     } else {
-    //         setIsScrolled(false);
-    //     }
-    //     };
+    useEffect(() => {
+        const handleScroll = () => {
+        if (window.scrollY > window.innerHeight - 300) {
+            setIsScrolled(true);
+        } else {
+            setIsScrolled(false);
+        }
+        };
 
-    //     window.addEventListener('scroll', handleScroll);
+        window.addEventListener('scroll', handleScroll);
 
-    //     return () => {
-    //     window.removeEventListener('scroll', handleScroll);
-    //     };
-    // }, []);
+        return () => {
+        window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
 
     return (
-        <div className={`w-full h-[80px] flex flex-row justify-between items-center px-6 py-2 fixed top-0 left-0 transition-all duration-300 ease-in-out bg-gray-900 bg-opacity-100 z-20`}>
+        <div className={`w-full h-[80px] flex flex-row justify-between items-center px-6 py-2 fixed top-0 left-0 transition-all duration-300 ease-in-out ${isScrolled ? "bg-gray-900" : "bg-transparent"} bg-opacity-70 z-20`}>
             <div className="flex flex-row items-center cursor-pointer" onClick={() => { router.push('/') }}>
                 <Image 
                     src={Logo}

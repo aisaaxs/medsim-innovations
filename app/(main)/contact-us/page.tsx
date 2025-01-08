@@ -43,22 +43,24 @@ export default function ContactUs() {
     formDataToSend.append("Message", formData.message);
 
     try {
-      const response = await fetch(
-        "https://script.google.com/macros/s/AKfycbwP30-wbN5awpwOSBgExwroXGzdjzcLjn4m_fXuDIvknqnROYr_MMmNPcj7tn-xuzz_PQ/exec",
-        {
-          method: "POST",
-          body: formDataToSend,
-        }
-      );
-
-      const result = await response.text();
-
-      if (result === "success") {
-        setStatus("We have received your message. You can expect a response from us in 2-3 business days!");
-        setFormData({ name: "", email: "", message: "" });
-      } else {
-        setStatus("There was an issue submitting the form. Please try again.");
+      const response = await fetch('/api/create-user-query', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email.toLowerCase(),
+          message: formData.message,
+        }),
+      });
+  
+      if (!response.ok) {
+        throw new Error(await response.text());
       }
+
+      setStatus("We have received your message. You can expect a response from us in 2-3 business days!");
+      setFormData({ name: "", email: "", message: "" });
     } catch (error) {
       console.error("Form submission error: ", error);
       setStatus("Failed to submit the form. Please try again later.");

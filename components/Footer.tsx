@@ -46,19 +46,30 @@ export default function Footer() {
         formDataToSend.append('Email', email);
 
         try {
-            const response = await fetch('https://script.google.com/macros/s/AKfycbwP30-wbN5awpwOSBgExwroXGzdjzcLjn4m_fXuDIvknqnROYr_MMmNPcj7tn-xuzz_PQ/exec', {
+            const response = await fetch('/api/create-user-subscription', {
                 method: 'POST',
-                body: formDataToSend
+                headers: {
+                  'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                  name: formData.name,
+                  email: formData.email.toLowerCase()
+                }),
             });
 
-            const result = await response.text();
-
-            if (result === 'success') {
-                setStatus('Thank you for subscribing!');
-                setFormData({ name: "", email: "" });
-            } else {
-                setStatus('Something went wrong, please try again.');
+            if (!response.ok) {
+                throw new Error(await response.text());
             }
+
+            const data = await response.json();
+
+            if (data.message === 'User already subscribed') {
+                setStatus('You are already subscribed!');
+            } else {
+                setStatus('Thank you for subscribing!');
+            }
+
+            setFormData({ name: "", email: "" });
         } catch (error) {
             console.error("Form submission error: ", error);
             setStatus('Failed to submit, please try again later.');

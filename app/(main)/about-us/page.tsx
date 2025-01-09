@@ -4,8 +4,8 @@ import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLightbulb, faTools, faCheckCircle, faGlobe, faUsers } from "@fortawesome/free-solid-svg-icons";
 import { Racing_Sans_One } from "next/font/google";
-import AboutUsImg from "../../../images/pexels-thisisengineering-3913010 (1).jpg";
-import NursingSchool from "../../../images/Nursing Students Thirdman.jpg";
+import AboutUsImg from "../../../images/The Three E.png";
+import NursingSchool from "../../../images/Nusing-Colleges.jpg";
 import MedicalSchool from "../../../images/Medical Student Photo by Artempodrez.jpg";
 import MedInstitution from "../../../images/Doctors Photos from Pexels.jpg";
 
@@ -82,9 +82,9 @@ export default function AboutUs() {
         <h2 className={`text-5xl mb-8 text-gray-900 ${racing_sans_one.className} uppercase`}>Our Customers</h2>
         <div className="flex flex-col lg:flex-row justify-around gap-8 px-8 max-w-7xl mx-auto">
         {[
-            { title: "Nursing Schools & Colleges", text: "Offering training kits that cater specifically to nursing education and training.", image: NursingSchool },
-            { title: "Medical Schools & Universities", text: "Providing tools for medical students and residents to gain hands-on experience.", image: MedicalSchool },
-            { title: "Hospitals & Healthcare Institutions", text: "Supporting ongoing professional development and competency assessments for healthcare providers.", image: MedInstitution },
+            { title: "Nursing Colleges", text: "Offering training kits specifically designed for nursing education and practical training.", image: NursingSchool },
+            { title: "Medical Colleges", text: "Providing advanced tools for medical students and residents to enhance their hands-on learning experience.", image: MedicalSchool },
+            { title: "Hospitals", text: "Supporting ongoing professional development and competency assessments for healthcare providers.", image: MedInstitution },
             ].map((customer, index) => (
             <div 
                 key={index} 
@@ -95,7 +95,7 @@ export default function AboutUs() {
                 alt="Customer Image"
                 className="w-full h-[300px] object-cover rounded-md mb-4" 
                 />
-                <h3 className={`text-xl mb-4 text-gray-900 ${racing_sans_one.className}`}>{customer.title}</h3>
+                <h3 className={`text-2xl mb-4 text-gray-900 ${racing_sans_one.className}`}>{customer.title}</h3>
                 <p className="text-center text-gray-900">{customer.text}</p>
             </div>
             ))}

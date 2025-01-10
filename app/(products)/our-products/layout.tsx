@@ -4,7 +4,7 @@ import "../../globals.css";
 import Footer from "../../../components/Footer";
 import ClientRoot from "../../../components/ClientRoot";
 
-export default function MainLayout({
+export default function ProductsLayout({
   children,
 }: {
   children: React.ReactNode;

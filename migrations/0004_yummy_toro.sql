@@ -1,0 +1,1 @@
+ALTER TABLE `admins` ADD `name` text NOT NULL;

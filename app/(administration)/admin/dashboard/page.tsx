@@ -15,6 +15,35 @@ const handleLogout = async () => {
     await fetch('/api/logout', { method: 'POST' });
     window.location.href = '/admin/login';
 };
+
+const Logo = () => {
+    return (
+      <Link
+        href="/admin"
+        className="font-normal flex space-x-2 items-center text-sm text-black py-1 relative z-20"
+      >
+        <Image className="w-8 h-auto" src={MedSimLogo} alt="MedSim Innovations Logo" />
+        <motion.span
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          className="font-extrabold text-xl text-white whitespace-pre"
+        >
+          MedSim Innovations
+        </motion.span>
+      </Link>
+    );
+  };
+  
+  const LogoIcon = () => {
+    return (
+      <Link
+        href="/admin"
+        className="font-normal flex space-x-2 items-center text-sm text-black py-1 relative z-20"
+      >
+        <Image className="w-8 h-auto" src={MedSimLogo} alt="MedSim Innovations Logo" />
+      </Link>
+    );
+  };
   
 export default function SidebarDemo() {
   const links = [
@@ -74,30 +103,3 @@ export default function SidebarDemo() {
     </div>
   );
 }
-export const Logo = () => {
-  return (
-    <Link
-      href="/admin"
-      className="font-normal flex space-x-2 items-center text-sm text-black py-1 relative z-20"
-    >
-      <Image className="w-8 h-auto" src={MedSimLogo} alt="MedSim Innovations Logo" />
-      <motion.span
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        className="font-extrabold text-xl text-white whitespace-pre"
-      >
-        MedSim Innovations
-      </motion.span>
-    </Link>
-  );
-};
-export const LogoIcon = () => {
-  return (
-    <Link
-      href="/admin"
-      className="font-normal flex space-x-2 items-center text-sm text-black py-1 relative z-20"
-    >
-      <Image className="w-8 h-auto" src={MedSimLogo} alt="MedSim Innovations Logo" />
-    </Link>
-  );
-};

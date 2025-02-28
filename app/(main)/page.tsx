@@ -31,7 +31,7 @@ export default function Home() {
       description: "Learn more about our mission to bring realistic and affordable training solutions that make a difference.",
       buttonText: "Learn More About Us",
       link: "/about-us",
-      bgColor: "bg-gray-900",
+      bgColor: "bg-gradient-to-br from-blue-600 to-gray-950",
       reverseOrder: true,
     },
     {
@@ -40,7 +40,7 @@ export default function Home() {
       description: "Discover our range of high-quality, durable products designed to enhance your training experience.",
       buttonText: "View Our Products",
       link: "/our-products",
-      bgColor: "bg-white",
+      bgColor: "bg-gradient-to-bl from-rose-600 to-gray-950",
       reverseOrder: false,
     },
     {
@@ -49,7 +49,7 @@ export default function Home() {
       description: "Learn more about who we serve and collaborate with to achieve shared success and drive meaningful impact.",
       buttonText: "Explore Our Customers",
       link: "/about-us#our-customers",
-      bgColor: "bg-gray-900",
+      bgColor: "bg-gradient-to-br from-green-600 to-gray-950",
       reverseOrder: true,
     },
     {
@@ -58,7 +58,7 @@ export default function Home() {
       description: "Reach out to our team for any inquiries, support, or assistance with our products and services.",
       buttonText: "Get in Touch With Us",
       link: "/contact-us",
-      bgColor: "bg-white",
+      bgColor: "bg-gradient-to-bl from-amber-600 to-gray-950",
       reverseOrder: false,
     },
   ];
@@ -138,7 +138,7 @@ export default function Home() {
               <div className="lg:w-1/2 px-8 mb-6 lg:mb-0 order-2 lg:order-1 max-lg:mt-6">
                 <h2 className={`text-6xl mb-4 text-white ${racing_sans_one.className}`}>{section.title}</h2>
                 <p className="text-white text-lg">{section.description}</p>
-                <button className="mt-4 px-6 py-2 bg-white text-gray-900 rounded hover:bg-yellow-300" onClick={() => router.push(section.link)}>
+                <button className={`mt-4 px-6 py-2 bg-white text-gray-950 rounded hover:bg-yellow-300`} onClick={() => router.push(section.link)}>
                   {section.buttonText}
                 </button>
               </div>
@@ -147,7 +147,7 @@ export default function Home() {
                   src={section.image} 
                   alt={section.title} 
                   layout="responsive" 
-                  className="lg:rounded-l-xl shadow-xl filter grayscale-[20%] brightness-90 hover:brightness-100 transition duration-300"
+                  className="lg:rounded-l-xl filter grayscale-[20%] brightness-100 transition duration-300"
                 />
               </div>
             </>
@@ -158,13 +158,13 @@ export default function Home() {
                   src={section.image} 
                   alt={section.title} 
                   layout="responsive" 
-                  className="lg:rounded-r-xl shadow-xl filter grayscale-[20%] brightness-90 hover:brightness-100 transition duration-300"
+                  className="lg:rounded-r-xl filter grayscale-[20%] brightness-100 transition duration-300"
                 />
               </div>
               <div className="lg:w-1/2 px-8 max-lg:mt-6">
-                <h2 className={`text-6xl mb-4 text-gray-900 ${racing_sans_one.className}`}>{section.title}</h2>
-                <p className="text-gray-900 text-lg">{section.description}</p>
-                <button className="mt-4 px-6 py-2 bg-gray-900 text-white hover:text-gray-900 rounded hover:bg-yellow-300" onClick={() => router.push(section.link)}>
+                <h2 className={`text-6xl mb-4 text-white ${racing_sans_one.className}`}>{section.title}</h2>
+                <p className={`text-white text-lg`}>{section.description}</p>
+                <button className={`mt-4 px-6 py-2 bg-white text-gray-950 rounded hover:bg-yellow-300`} onClick={() => router.push(section.link)}>
                   {section.buttonText}
                 </button>
               </div>

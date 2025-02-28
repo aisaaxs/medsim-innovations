@@ -100,11 +100,11 @@ export default function Footer() {
                     </p>
                     <p className="text-sm">
                         <strong className="text-white">Phone:</strong>{" "}
-                        <a href="tel:+919971466122" className="hover:text-white underline">+919971466122</a> | <a href="tel:+911243699618" className="hover:text-white underline">+911243699618</a>
+                        <a href="tel:+919971466122" className="hover:text-green-500 underline">+919971466122</a> | <a href="tel:+911243699618" className="hover:text-green-500 underline">+911243699618</a>
                     </p>
                     <p className="text-sm">
                         <strong className="text-white">Email:</strong>{" "}
-                        <a href="mailto:sales@medsiminnovations.com" className="hover:text-white underline">sales@medsiminnovations.com</a>
+                        <a href="mailto:sales@medsiminnovations.com" className="hover:text-green-500 underline">sales@medsiminnovations.com</a>
                     </p>
                     <div className="flex gap-x-8 mt-12">
                         {socialLinks.map((social, index) => (
@@ -155,7 +155,7 @@ export default function Footer() {
                         <button
                             type="submit"
                             className="w-full md:w-4/5 px-5 py-3 bg-green-500 text-white font-semibold rounded hover:bg-green-600 transition"
-                            disabled={isLoading} // Disable button while loading
+                            disabled={isLoading}
                         >
                             {isLoading ? "Submitting..." : "Sign Up"}
                         </button>
@@ -171,8 +171,8 @@ export default function Footer() {
                     &copy; 2024 <Link href="https://www.medsiminnovations.com" className="text-white underline hover:text-green-500" target="_blank">MedSim Innovations</Link> - All Rights Reserved.
                 </p>
                 <div className="flex space-x-4">
-                    <Link href="/" className="hover:text-green-500 transition-colors duration-200">Privacy Policy</Link>
-                    <Link href="/" className="hover:text-green-500 transition-colors duration-200">Terms of Service</Link>
+                    <Link href="#" className="hover:text-green-500 transition-colors duration-200">Privacy Policy</Link>
+                    <Link href="#" className="hover:text-green-500 transition-colors duration-200">Terms of Service</Link>
                 </div>
             </div>
         </footer>

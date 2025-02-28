@@ -22,7 +22,6 @@ const navItems = [
     { label: 'home', href: '/' },
     { label: 'about us', href: '/about-us' },
     { label: 'our products', href: '/our-products' },
-    // { label: 'blogs', href: '/blogs' },
     { label: 'contact us', href: '/contact-us' },
 ];
 
@@ -39,26 +38,8 @@ export default function Header() {
         }
     }, [showSidebar]);
 
-    const [isScrolled, setIsScrolled] = useState(false);
-
-    useEffect(() => {
-        const handleScroll = () => {
-        if (window.scrollY > window.innerHeight - 300) {
-            setIsScrolled(true);
-        } else {
-            setIsScrolled(false);
-        }
-        };
-
-        window.addEventListener('scroll', handleScroll);
-
-        return () => {
-        window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
-
     return (
-        <div className={`w-full h-[80px] flex flex-row justify-between items-center px-6 py-2 fixed top-0 left-0 transition-all duration-300 ease-in-out ${isScrolled ? "bg-gray-900" : "bg-transparent"} bg-opacity-70 z-20`}>
+        <div className={`w-full h-[80px] flex flex-row justify-between items-center px-6 py-2 fixed top-0 left-0 transition-all duration-300 ease-in-out bg-gray-950 bg-opacity-80 z-20`}>
             <div className="flex flex-row items-center cursor-pointer" onClick={() => { router.push('/') }}>
                 <Image 
                     src={Logo}
@@ -87,7 +68,7 @@ export default function Header() {
                 }} />
             </div>
 
-            <div className={`lg:hidden fixed top-0 right-0 min-w-[250px] h-full bg-white flex flex-col justify-start items-center drop-shadow-xl z-20 transform transition-transform duration-300 ${showSidebar ? 'translate-x-0' : 'translate-x-full'}`}>
+            <div className={`lg:hidden fixed top-0 right-0 min-w-[250px] w-full h-full bg-white flex flex-col justify-start items-center drop-shadow-xl z-20 transform transition-transform duration-300 ${showSidebar ? 'translate-x-0' : 'translate-x-full'}`}>
                 <div className={`w-full h-auto flex flex-row justify-between items-center text-primaryTextColor text-xl ${goldman.className} capitalize p-4`}>
                     <h3>menu</h3>
                     <FontAwesomeIcon icon={faX} className="cursor-pointer" onClick={() => setShowSidebar(false)} />

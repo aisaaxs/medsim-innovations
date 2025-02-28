@@ -1,0 +1,16 @@
+services:
+  app:
+    image: medsim-innovations
+    container_name: medsim-innovations_app
+    restart: always
+    build:
+      context: ./
+      target: dev
+      dockerfile: Dockerfile
+      no_cache: true
+    volumes:
+      - .:/app
+      - /app/node_modules
+      - /app/.next
+    ports:
+      - "3000:3000"

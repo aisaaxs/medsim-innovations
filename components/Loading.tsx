@@ -22,7 +22,7 @@ export default function Loading() {
               d="M4 12a8 8 0 018-8V0C6.477 0 2 4.477 2 10s4.477 10 10 10v-2a8 8 0 01-8-8z"
             ></path>
           </svg>
-          <p className="text-white font-semibold">Loading, please wait...</p>
+          <p className="text-white font-semibold capitalize">Loading, please wait...</p>
         </div>
       </div>
     );

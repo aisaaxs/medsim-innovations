@@ -7,6 +7,7 @@ import NurseKitProImg from "../../../images/nurse-kit-pro.png";
 import CommunityBagImg from "../../../images/community-bag.png";
 import SutureKitImg from "../../../images/suture-kit.png";
 import RomaKitImg from "../../../images/roma-kit.png";
+import TaskTrainersImg from "../../../images/roma-kit.png";
 
 const racing_sans_one = Racing_Sans_One({
   weight: '400',
@@ -26,6 +27,13 @@ export default function ProductsPage() {
       image: RomaKitImg,
       link: "/our-products/roma-kit",
       backgroundColor: "bg-green-200",
+    },
+    {
+      title: "Task Trainers",
+      description: "Premium simulators for IV insertion, venipuncture, dialysis, infant care, and more.",
+      image: TaskTrainersImg,
+      link: "/our-products/task-trainers",
+      backgroundColor: "bg-purple-200",
     },
     {
       title: "Nurse Kit Pro",

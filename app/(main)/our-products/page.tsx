@@ -2,12 +2,12 @@
 
 import Image from "next/image";
 import { Racing_Sans_One, Oswald } from "next/font/google";
-import OurProductsImg from "../../../images/pexels-shox-28271058.jpg";
-import NurseKitProImg from "../../../images/nurse-kit-pro.png";
-import CommunityBagImg from "../../../images/community-bag.png";
-import SutureKitImg from "../../../images/suture-kit.png";
-import RomaKitImg from "../../../images/roma-kit.png";
-import TaskTrainersImg from "../../../images/roma-kit.png";
+import OurProductsImg from "@/public/pexels-shox-28271058.jpg";
+import NurseKitProImg from "@/public/nurse-kit-pro.png";
+import CommunityBagImg from "@/public/community-bag.png";
+import SutureKitImg from "@/public/suture-kit.png";
+import RomaKitImg from "@/public/roma-kit.png";
+import TaskTrainersImg from "@/public/roma-kit.png";
 
 const racing_sans_one = Racing_Sans_One({
   weight: '400',

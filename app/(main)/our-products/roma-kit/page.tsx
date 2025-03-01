@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import RomaKitImg from "../../../../images/roma-kit.png";
+import RomaKitImg from "@/public/roma-kit.png";
 import Image from "next/image";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Logo from "../images/Med Sim Logo.png";
+import Logo from "@/public/Med Sim Logo.png";
 import { Oswald, Goldman } from 'next/font/google';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faX } from "@fortawesome/free-solid-svg-icons";
@@ -25,7 +25,7 @@ const navItems = [
     { label: 'contact us', href: '/contact-us' },
 ];
 
-export default function Header() {
+export default function NavBar() {
     const router = useRouter();
     const pathname = usePathname();
     const [showSidebar, setShowSidebar] = useState(false);

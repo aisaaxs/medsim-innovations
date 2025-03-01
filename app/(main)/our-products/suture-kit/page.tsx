@@ -1,25 +1,25 @@
 "use client";
 
 import { motion } from "framer-motion";
-import CommunityBagImg from "../../../../images/community-bag.png";
+import SutureKitImg from "@/public/suture-kit.png";
 import Image from "next/image";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useRouter } from "next/navigation";
 
-export default function CommunityBag() {
+export default function SutureKit() {
     const router = useRouter();
     
   return (
     <div className="w-full">
-      <div className="relative h-auto py-10 bg-gradient-to-b from-yellow-400 to-white flex flex-col items-center justify-center text-center px-6">
+      <div className="relative h-auto py-10 bg-gradient-to-b from-red-400 to-white flex flex-col items-center justify-center text-center px-6">
         <motion.h1
           className="text-5xl font-extrabold text-gray-900"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
-          Community Bag
+          Suture Kit
         </motion.h1>
         <motion.p
           className="text-lg text-gray-600 mt-4 max-w-2xl"
@@ -27,7 +27,7 @@ export default function CommunityBag() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
-          Designed for versatility and reliability, ideal for professionals working in community healthcare.
+          A training suture kit designed to refine and practice essential suturing skills.
         </motion.p>
       </div>
 
@@ -45,8 +45,8 @@ export default function CommunityBag() {
           viewport={{ once: true }}
         >
           <Image
-            src={CommunityBagImg}
-            alt="Community Bag"
+            src={SutureKitImg}
+            alt="Suture Kit"
             width={600}
             height={600}
             className="rounded-xl"
@@ -59,18 +59,18 @@ export default function CommunityBag() {
           transition={{ duration: 1 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl font-bold text-gray-800">Versatile Design</h2>
+          <h2 className="text-3xl font-bold text-gray-800">Realistic Training</h2>
           <p className="text-lg text-gray-600">
-            Community Bag is built to handle diverse environments and needs. It is robust, adaptable, and organized to ensure efficiency.
+            This suture kit is ideal for medical and nursing students to practice under realistic conditions.
           </p>
           <ul className="list-disc pl-6 text-gray-600">
-            <li>Multiple compartments for easy organization.</li>
-            <li>Durable materials to withstand varied conditions.</li>
-            <li>Lightweight and easy to carry for convenience.</li>
+            <li>Variety of suturing materials to simulate real-world scenarios.</li>
+            <li>Durable tools for repeated practice sessions.</li>
+            <li>Compact and portable for training anywhere.</li>
           </ul>
         </motion.div>
       </div>
-      <div className="bg-gradient-to-t from-yellow-400 to-white py-16 text-center">
+      <div className="bg-gradient-to-t from-red-400 to-white py-16 text-center">
         <motion.h2
           className="text-4xl font-bold text-gray-800"
           initial={{ opacity: 0, y: 50 }}
@@ -78,11 +78,11 @@ export default function CommunityBag() {
           transition={{ duration: 1 }}
           viewport={{ once: true }}
         >
-          Ready to Enhance Your Practice?
+          Ready to Refine Your Skills?
         </motion.h2>
         <motion.a
           href="/contact-us"
-          className="mt-6 px-8 py-4 text-white bg-yellow-600 rounded-lg shadow-lg text-lg hover:bg-yellow-700 transition inline-block"
+          className="mt-6 px-8 py-4 text-white bg-red-600 rounded-lg shadow-lg text-lg hover:bg-red-700 transition inline-block"
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1 }}

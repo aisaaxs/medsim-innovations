@@ -3,7 +3,7 @@
 import { Racing_Sans_One, Oswald } from "next/font/google";
 import { useState } from "react";
 import Image from "next/image";
-import ContactUsImg from "../../../images/pexels-alex-andrews-271121-821754.jpg";
+import ContactUsImg from "@/public/pexels-alex-andrews-271121-821754.jpg";
 
 const racing_sans_one = Racing_Sans_One({
   weight: "400",

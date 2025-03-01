@@ -26,14 +26,3 @@ export const userSubscriptionsTable = sqliteTable('user_subscriptions', {
 
 export type InsertUserSubscription = typeof userSubscriptionsTable.$inferInsert;
 export type SelectUserSubscription = typeof userSubscriptionsTable.$inferSelect;
-
-
-export const adminsTable = sqliteTable('admins', {
-    id: integer('id').primaryKey({ autoIncrement: true }),
-    name: text('name').notNull(),
-    email: text('email').notNull(),
-    password: text('password').notNull(),
-    sessionKey: text('session_key'),
-});
-
-export type SelectAdmin = typeof adminsTable.$inferSelect;

@@ -25,7 +25,7 @@ const navItems = [
     { label: 'contact us', href: '/contact-us' },
 ];
 
-export default function Header() {
+export default function NavBar() {
     const router = useRouter();
     const pathname = usePathname();
     const [showSidebar, setShowSidebar] = useState(false);

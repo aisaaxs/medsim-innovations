@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import SutureKitImg from "../../../../images/suture-kit.png";
+import SutureKitImg from "@/public/suture-kit.png";
 import Image from "next/image";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

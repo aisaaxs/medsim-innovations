@@ -1,18 +1,18 @@
 "use client";
 
 import { motion } from "framer-motion";
-import TaskTrainersImg from "../../../../images/roma-kit.png";
+import TaskTrainersImg from "@/public/roma-kit.png";
 import Image from "next/image";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useRouter } from "next/navigation";
-import CentralLineIVTorso from "../../../../images/Central Line IV Torso.jpeg";
-import IVTorso from "../../../../images/IV Torso.jpeg";
-import PeritonealDialysisModel from "../../../../images/Peritoneal dialysis training model.jpeg";
-import VenipunctureIVArm from "../../../../images/Venipuncture IV arm model.jpeg";
-import InfantSimulator from "../../../../images/Advanced full function infant simulator.jpeg";
-import FullBodyNursingManikin from "../../../../images/Full body nursing manikin.jpeg";
-import IVPracticeArmKit from "../../../../images/Intravenous Practice Arm Kit with Intradermal Injection Spots.jpeg";
+import CentralLineIVTorso from "@/public/Central Line IV Torso.jpeg";
+import IVTorso from "@/public/IV Torso.jpeg";
+import PeritonealDialysisModel from "@/public/Peritoneal dialysis training model.jpeg";
+import VenipunctureIVArm from "@/public/Venipuncture IV arm model.jpeg";
+import InfantSimulator from "@/public/Advanced full function infant simulator.jpeg";
+import FullBodyNursingManikin from "@/public/Full body nursing manikin.jpeg";
+import IVPracticeArmKit from "@/public/Intravenous Practice Arm Kit with Intradermal Injection Spots.jpeg";
 
 export default function SutureKit() {
     const router = useRouter();

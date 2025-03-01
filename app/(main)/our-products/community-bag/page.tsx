@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import CommunityBagImg from "../../../../images/community-bag.png";
+import CommunityBagImg from "@/public/community-bag.png";
 import Image from "next/image";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

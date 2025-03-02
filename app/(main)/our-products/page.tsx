@@ -7,7 +7,7 @@ import NurseKitProImg from "@/public/nurse-kit-pro.png";
 import CommunityBagImg from "@/public/community-bag.png";
 import SutureKitImg from "@/public/suture-kit.png";
 import RomaKitImg from "@/public/roma-kit.png";
-import TaskTrainersImg from "@/public/roma-kit.png";
+import TaskTrainersImg from "@/public/IV Torso.jpeg";
 
 const racing_sans_one = Racing_Sans_One({
   weight: '400',

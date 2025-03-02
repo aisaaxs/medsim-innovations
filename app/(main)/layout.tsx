@@ -1,6 +1,6 @@
 import "../globals.css";
-import Header from "../../components/NavBar";
-import Footer from "../../components/Footer";
+import Header from "../../components/(main)/NavBar";
+import Footer from "../../components/(main)/Footer";
 import ClientRoot from "../../components/ClientRoot";
 
 export default function MainLayout({

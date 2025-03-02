@@ -4,13 +4,13 @@ import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import { cookies } from 'next/headers';
 
-export async function POST(req: NextRequest) {
+export async function POST() {
     const JWT_SECRET = process.env.JWT_SECRET;
     
     if (!JWT_SECRET) {
         throw new Error('No JWT secret found in environment variables');
     }
-    
+
     try {
         const cookieStore = cookies();
         const sessionToken = (await cookieStore).get('medsim-innovations-session-token')?.value;

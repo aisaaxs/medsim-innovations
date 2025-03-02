@@ -3,13 +3,13 @@ import { updateAdminSessionKey } from '@/db/queries/update';
 import jwt from 'jsonwebtoken';
 import { cookies } from 'next/headers';
 
-export async function POST(req: NextRequest) {
+export async function POST() {
   const JWT_SECRET = process.env.JWT_SECRET;
     
   if (!JWT_SECRET) {
       throw new Error('No JWT secret found in environment variables');
   }
-  
+
   try {
     const cookieStore = cookies();
     const sessionToken = (await cookieStore).get('medsim-innovations-session-token')?.value;
@@ -22,7 +22,7 @@ export async function POST(req: NextRequest) {
     try {
       decoded = jwt.verify(sessionToken, JWT_SECRET) as { email: string };
     } catch (error) {
-      return NextResponse.json({ error: 'Invalid session token' }, { status: 403 });
+      return NextResponse.json({ error: 'Invalid session token: ' + error }, { status: 403 });
     }
 
     if (!decoded.email) {

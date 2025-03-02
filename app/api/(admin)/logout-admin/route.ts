@@ -3,9 +3,13 @@ import { updateAdminSessionKey } from '@/db/queries/update';
 import jwt from 'jsonwebtoken';
 import { cookies } from 'next/headers';
 
-const JWT_SECRET = process.env.JWT_SECRET || 'secret';
-
 export async function POST(req: NextRequest) {
+  const JWT_SECRET = process.env.JWT_SECRET;
+    
+  if (!JWT_SECRET) {
+      throw new Error('No JWT secret found in environment variables');
+  }
+  
   try {
     const cookieStore = cookies();
     const sessionToken = (await cookieStore).get('medsim-innovations-session-token')?.value;

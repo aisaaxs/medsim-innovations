@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { NextResponse } from 'next/server';
 import { getAdminByEmail } from '@/db/queries/select';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';

@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { NextResponse } from 'next/server';
 import { updateAdminSessionKey } from '@/db/queries/update';
 import jwt from 'jsonwebtoken';
 import { cookies } from 'next/headers';

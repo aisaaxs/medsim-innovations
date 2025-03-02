@@ -4,7 +4,7 @@ import type { NextRequest } from 'next/server';
 export async function middleware(request: NextRequest) {
   try {
     const url = new URL(request.url);
-    const isLoginPage = url.pathname === '/admin';
+    const isLoginPage = url.pathname === '/admin/auth' || url.pathname === '/admin';
 
     const response = await fetch(new URL('/api/validate-admin', request.url), {
       method: 'POST',
@@ -19,13 +19,13 @@ export async function middleware(request: NextRequest) {
     }
 
     if (!isValidAdmin && !isLoginPage) {
-      return NextResponse.redirect(new URL('/admin', request.url));
+      return NextResponse.redirect(new URL('/admin/auth', request.url));
     }
 
     return NextResponse.next();
   } catch (error) {
     console.error('🔥 Middleware Error:', error);
-    return NextResponse.redirect(new URL('/admin', request.url));
+    return NextResponse.redirect(new URL('/admin/auth', request.url));
   }
 }
 

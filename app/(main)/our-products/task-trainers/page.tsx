@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import TaskTrainersImg from "@/public/roma-kit.png";
+import TaskTrainersImg from "@/public/IV Torso.jpeg";
 import Image from "next/image";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -57,7 +57,7 @@ export default function SutureKit() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1 }}
                 >
-                Task Trainers
+                    Task Trainers
                 </motion.h1>
                 <motion.p
                 className="text-lg text-gray-600 mt-4 max-w-2xl"
@@ -82,13 +82,13 @@ export default function SutureKit() {
                 transition={{ duration: 1 }}
                 viewport={{ once: true }}
                 >
-                <Image
-                    src={TaskTrainersImg}
-                    alt="Suture Kit"
-                    width={600}
-                    height={600}
-                    className="rounded-xl"
-                />
+                    <Image
+                        src={TaskTrainersImg}
+                        alt="Suture Kit"
+                        width={600}
+                        height={600}
+                        className="rounded-xl"
+                    />
                 </motion.div>
                 <motion.div
                 className="space-y-6"
@@ -97,39 +97,34 @@ export default function SutureKit() {
                 transition={{ duration: 1 }}
                 viewport={{ once: true }}
                 >
-                <h2 className="text-3xl font-bold text-gray-800">Master Critical Medical Procedures
-                </h2>
-                <p className="text-lg text-gray-600">
-                    Task trainers offer a hands-on approach to mastering critical medical procedures in a controlled environment.
-                </p>
-                <ul className="list-disc pl-6 text-gray-600">
-                    <li>Provides a risk-free setting for hands-on skill development.</li>
-                    <li>Enhances procedural accuracy and clinical confidence.</li>
-                    <li>Designed for repeated use to reinforce learning and muscle memory.</li>
-                    <li>Ideal for medical students, nurses, and healthcare professionals.</li>
-                </ul>
+                    <h2 className="text-3xl font-bold text-gray-800">Master Critical Medical Procedures
+                    </h2>
+                    <p className="text-lg text-gray-600">
+                        Task trainers offer a hands-on approach to mastering critical medical procedures in a controlled environment.
+                    </p>
+                    <ul className="list-disc pl-6 text-gray-600">
+                        <li>Provides a risk-free setting for hands-on skill development.</li>
+                        <li>Enhances procedural accuracy and clinical confidence.</li>
+                        <li>Designed for repeated use to reinforce learning and muscle memory.</li>
+                        <li>Ideal for medical students, nurses, and healthcare professionals.</li>
+                    </ul>
                 </motion.div>
             </div>
 
-            <div className="w-full h-auto px-10 flex flex-col justify-center items-center gap-y-10 pt-10 pb-20">
-                <h2 className="text-4xl font-bold text-gray-800">What&apos;s Included?
-                </h2>
-
-                <div className="w-full h-auto flex justify-center items-center flex-row flex-wrap gap-x-8 gap-y-8">
-                    {
-                        includedProducts.map((product, index) => (
-                            <div key={index} className="w-60 h-72 border-2 border-gray-900 grid grid-rows-[60%_auto] transform transition-transform duration-300 hover:-translate-y-3 hover:shadow-md rounded-lg">
-                                <div className="w-full h-full flex justify-center items-center">
-                                    <Image src={product.image} alt={product.name} className="w-full h-full rounded-t-lg" />
-                                </div>
-
-                                <div className="w-full h-full flex justify-center items-center p-2 bg-purple-950">
-                                    <p className="text-lg font-bold font-sans text-white capitalize text-center">{product.name}</p>
-                                </div>
+            <div className="w-full h-auto my-10 flex justify-center items-center flex-row flex-wrap gap-x-8 gap-y-8">
+                {
+                    includedProducts.map((product, index) => (
+                        <div key={index} className="w-60 h-72 border-2 border-gray-900 grid grid-rows-[60%_auto] transform transition-transform duration-300 hover:-translate-y-3 hover:shadow-md rounded-lg">
+                            <div className="w-full h-full flex justify-center items-center">
+                                <Image src={product.image} alt={product.name} className="w-full h-full rounded-t-lg" />
                             </div>
-                        ))
-                    }
-                </div>
+
+                            <div className="w-full h-full flex justify-center items-center p-2 bg-purple-950">
+                                <p className="text-lg font-bold font-sans text-white capitalize text-center">{product.name}</p>
+                            </div>
+                        </div>
+                    ))
+                }
             </div>
 
             <div className="bg-gradient-to-t from-purple-400 to-white py-16 text-center">

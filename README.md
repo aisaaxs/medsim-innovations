@@ -69,10 +69,10 @@ Comfortable and functional uniforms tailored to the long hours and unique tasks 
 **Company Name:** MedSim Innovations Pvt. Ltd.  
 **Industry:** Medical Simulation & Healthcare Training  
 
-- **Headquarters:** [Insert Address]  
-- **Phone:** [Insert Phone Number]  
-- **Email:** [Insert Email Address]  
-- **Website:** [Insert Website URL]  
+- **Headquarters:** Q 114, 3rd Floor, South City 1, Gurgaon 122001, Haryana, India 
+- **Phone:** +919971466122 | +911243699618
+- **Email:** sales@medsiminnovations.com  
+- **Website:** https://www.medsiminnovations.com/
 
 
 

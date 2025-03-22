@@ -2,7 +2,7 @@
 
 Welcome to the official repository of **MedSim Innovations Pvt. Ltd.**, a leader in affordable **medical simulation** and **healthcare training** solutions. We empower healthcare professionals and students through high-quality, accessible simulation kits designed to improve clinical competence and patient outcomes.
 
----
+
 
 ## 🌍 Why MedSim Innovations?
 
@@ -11,19 +11,19 @@ Patient safety is at the heart of modern healthcare. Every year, millions suffer
 **Simulation-based education** is a proven solution, drastically reducing clinical errors and preparing future professionals for real-world challenges.  
 At **MedSim Innovations**, we focus on making simulation-based training accessible to **nursing colleges** and **small hospitals in developing countries** by offering affordable, practical, and realistic tools.
 
----
+
 
 ## 🎯 Our Mission
 
 To revolutionize healthcare education by providing **cutting-edge medical simulation technology** that empowers healthcare professionals' clinical competency and promotes **high standards of patient care**.
 
----
+
 
 ## 🌟 Our Vision
 
 We envision a world where **simulation-based education** is the cornerstone of healthcare training—leading to improved patient outcomes and global advancements in the quality of care.
 
----
+
 
 ## 🧰 Our Product Kits
 
@@ -44,7 +44,7 @@ A robust, organized bag ideal for community health professionals in various sett
 ### ✅ Student Uniform  
 Comfortable and functional uniforms tailored to the long hours and unique tasks of nursing students.
 
----
+
 
 ## 🏥 Our Customers
 
@@ -52,7 +52,7 @@ Comfortable and functional uniforms tailored to the long hours and unique tasks 
 - **Medical Schools & Universities** – Simulation tools for students and residents  
 - **Hospitals & Healthcare Institutions** – Kits for professional development and competency assessment
 
----
+
 
 ## 💡 Our Value Pillars
 
@@ -62,7 +62,7 @@ Comfortable and functional uniforms tailored to the long hours and unique tasks 
 - **Comprehensive Support** – From selection and setup to training and maintenance  
 - **Global Reach** – A network of distributors serving institutions worldwide
 
----
+
 
 ## 📞 Contact Us
 
@@ -74,6 +74,6 @@ Comfortable and functional uniforms tailored to the long hours and unique tasks 
 - **Email:** [Insert Email Address]  
 - **Website:** [Insert Website URL]  
 
----
+
 
 > “Better training leads to better care. With MedSim Innovations, healthcare education meets excellence.”  

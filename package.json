@@ -31,7 +31,7 @@
     "cookie": "^1.0.2",
     "dotenv": "^16.4.7",
     "drizzle-orm": "^0.41.0",
-    "esbuild": "^0.25.1",
+    "esbuild": "^0.25.2",
     "framer-motion": "^11.17.0",
     "jose": "^5.10.0",
     "jsonwebtoken": "^9.0.2",

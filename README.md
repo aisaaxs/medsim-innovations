@@ -76,4 +76,9 @@ Comfortable and functional uniforms tailored to the long hours and unique tasks 
 
 
 
-> “Better training leads to better care. With MedSim Innovations, healthcare education meets excellence.”  
+> “Better training leads to better care. With MedSim Innovations, healthcare education meets excellence.”
+
+---
+
+> The source code is **not open-source** and may **not be copied, reused, or distributed** without explicit permission.
+![License: No License](https://img.shields.io/badge/license-no--license-lightgrey)

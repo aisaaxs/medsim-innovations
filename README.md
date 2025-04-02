@@ -80,5 +80,6 @@ Comfortable and functional uniforms tailored to the long hours and unique tasks 
 
 ---
 
-> The source code is **not open-source** and may **not be copied, reused, or distributed** without explicit permission.
+The source code is **not open-source** and may **not be copied, reused, or distributed** without explicit permission.
+
 ![License: No License](https://img.shields.io/badge/license-no--license-lightgrey)

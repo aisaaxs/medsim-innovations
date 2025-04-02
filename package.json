@@ -19,7 +19,7 @@
     "docker:down-networks": "docker network ls -q --filter 'name=medsim-innovations' | xargs docker network rm"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^6.6.0",
+    "@fortawesome/fontawesome-svg-core": "^6.7.2",
     "@fortawesome/free-brands-svg-icons": "^6.6.0",
     "@fortawesome/free-regular-svg-icons": "^6.7.2",
     "@fortawesome/free-solid-svg-icons": "^6.6.0",

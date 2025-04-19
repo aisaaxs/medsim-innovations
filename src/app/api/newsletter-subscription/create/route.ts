@@ -17,6 +17,7 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json(subscription, { status: 201 });
   } catch (error) {
+    console.error(error);
     return NextResponse.json({ error: "Error creating subscription" }, { status: 500 });
   }
 }

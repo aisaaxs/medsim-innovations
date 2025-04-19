@@ -18,12 +18,6 @@ const roboto = Roboto({
   subsets: ['latin'],
 });
 
-const roboto_italic = Roboto({
-  weight: '800',
-  style: 'italic',
-  subsets: ['latin'],
-});
-
 type Props = {
   product: Product;
 };

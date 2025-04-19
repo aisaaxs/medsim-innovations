@@ -7,21 +7,10 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import ProductsPageImage from "../../../public/products/main.jpg";
 import { useRouter } from 'next/navigation';
-import { Racing_Sans_One, Roboto } from "next/font/google";
+import { Racing_Sans_One } from "next/font/google";
 
 const racing_sans_one = Racing_Sans_One({
     weight: '400',
-    subsets: ['latin'],
-});
-
-const roboto = Roboto({
-    weight: '400',
-    subsets: ['latin'],
-});
-
-const roboto_italic = Roboto({
-    weight: '800',
-    style: 'italic',
     subsets: ['latin'],
 });
 

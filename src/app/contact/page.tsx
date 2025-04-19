@@ -79,6 +79,7 @@ export default function ContactUs() {
         } catch (error) {
           setStatus("error");
           setFeedback("Failed to send. Please try again later.");
+          console.log(error);
         } finally {
           setTimeout(() => {
             setStatus(null);

@@ -4,7 +4,6 @@ import { notFound } from "next/navigation";
 import ProductPageClient from "../../../components/productPageClient";
 import { Product } from "@prisma/client";
 
-// ✅ Use inferred type from Next.js instead of redefining
 interface Props {
   params: { slug: string };
 }
@@ -19,9 +18,11 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+
   const product = await prisma.product.findUnique({
-    where: { slug: params.slug },
+    where: { slug },
   });
 
   if (!product) return {};
@@ -32,9 +33,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default async function ProductPage({ params }: Props) {
+export default async function ProductPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+
   const product: Product | null = await prisma.product.findUnique({
-    where: { slug: params.slug },
+    where: { slug },
   });
 
   if (!product) return notFound();

@@ -85,7 +85,8 @@ export default function Navbar() {
             </div>*/}
 
             <div className="w-auto h-full flex justify-center items-center lg:visible max-lg:hidden">
-                <Image src={theme === "light" ? sunIcon : moonIcon} alt="Light Mode" className={`w-10 h-10 cursor-pointer ${theme === "light" ? "invert-0" : "invert-100"} hover:bg-black/10 p-2 rounded-xs`} onClick={() => {theme === "light" ? setTheme("dark") : setTheme("light")}} />
+                <Image src={theme === "light" ? sunIcon : moonIcon} alt="Light Mode" className={`w-10 h-10 cursor-pointer ${theme === "light" ? "invert-0" : "invert-100"} hover:bg-black/10 p-2 rounded-xs`} onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+                />
             </div>
 
             <div className="w-auto h-full flex justify-center items-center ml-auto lg:hidden max-lg:visible">
@@ -113,7 +114,7 @@ export default function Navbar() {
                             }
                         </div>
 
-                        <div className={`w-full h-16 border-b-1 flex justify-start items-center p-4 ${roboto.className} text-lg ${theme === "light" ? "border-black hover:bg-black/20" : "border-white hover:bg-white/20"} capitalize gap-4`} onClick={() => {theme === "light" ? setTheme("dark") : setTheme("light")}}>
+                        <div className={`w-full h-16 border-b-1 flex justify-start items-center p-4 ${roboto.className} text-lg ${theme === "light" ? "border-black hover:bg-black/20" : "border-white hover:bg-white/20"} capitalize gap-4`} onClick={() => setTheme(theme === "light" ? "dark" : "light")}>
                             <Image src={theme === "light" ? sunIcon : moonIcon} alt="Navigation Menu" className={`w-6 h-6 ${theme === "light" ? "invert-0" : "invert-100"}`} />
 
                             toggle dark mode

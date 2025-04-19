@@ -14,11 +14,17 @@ const racing_sans_one = Racing_Sans_One({
     subsets: ['latin'],
 });
 
+interface Product {
+  slug: string;
+  name: string;
+  image: string;
+}
+
 export default function Products() {
     const { theme } = useTheme();
     const hasMounted = useHasMounted();
     const [isLoading, setIsLoading] = useState(true);
-    const [products, setProducts] = useState([]);
+    const [products, setProducts] = useState<Product[]>([]);
     const router = useRouter();
 
     useEffect(() => {

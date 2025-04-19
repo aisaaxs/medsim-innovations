@@ -23,7 +23,9 @@ export default function RootLayout({
           enableSystem
         >
           <Navbar />
-          {children}
+          <div className="pt-18">
+            {children}
+          </div>
           <Footer />
         </ThemeProvider>
       </body>

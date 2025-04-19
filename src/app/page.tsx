@@ -176,7 +176,7 @@ export default function Home() {
                   
                           <Link
                             href={section.link}
-                            className={`bg-white py-3 px-6 rounded-md ${roboto.className} text-base md:text-lg capitalize hover:bg-amber-300`}
+                            className={`bg-white py-3 px-6 rounded-md ${roboto.className} text-base md:text-lg capitalize hover:bg-amber-300 text-black`}
                           >
                             {section.buttonText}
                           </Link>
@@ -211,7 +211,7 @@ export default function Home() {
                   
                           <Link
                             href={section.link}
-                            className={`bg-white py-3 px-6 rounded-md ${roboto.className} text-base md:text-lg capitalize hover:bg-amber-300`}
+                            className={`bg-white py-3 px-6 rounded-md ${roboto.className} text-base md:text-lg capitalize hover:bg-amber-300 text-black`}
                           >
                             {section.buttonText}
                           </Link>

@@ -3,7 +3,6 @@
 import { useTheme } from "next-themes";
 import useHasMounted from "@/hooks/useHasMounted";
 import { useEffect, useState, useRef } from "react";
-import { useRouter } from "next/navigation";
 import Loading from "@/components/loading";
 import Image from "next/image";
 import AboutUsPageImage from "../../../public/about/main.png";
@@ -47,12 +46,11 @@ const customers = [
     { title: "Hospitals", text: "Supporting ongoing professional development and competency assessments for healthcare providers.", image: hospitalsImage },
 ];
 
-export default function Home() {
+export default function AboutUs() {
   const { theme } = useTheme();
   const hasMounted = useHasMounted();
   const [isLoading, setIsLoading] = useState(true);
   const customerSectionRef = useRef<HTMLDivElement | null>(null);
-  const router = useRouter();
 
   useEffect(() => {
     if (!hasMounted) return;
@@ -100,7 +98,7 @@ export default function Home() {
             </div>
         </div>
 
-        <div className="w-full h-auto p-12 flex flex-col justify-center items-center gap-12">
+        <div className="w-full h-auto p-12 py-24 flex flex-col justify-center items-center gap-16">
             <h2 className={`text-6xl ${racing_sans_one.className} uppercase text-center`}>our background</h2>
 
             <p className={`max-w-6xl mx-auto text-lg text-center ${roboto.className}`}>
@@ -120,7 +118,7 @@ export default function Home() {
                 </p>
             </div>
 
-            <div className="w-full max-w-6xl h-auto py-6 px-8 rounded-lg flex justify-center items-center flex-col gap-y-6 bg-gradient-to-br from-red-400 via-cyan-200 to-gray-400 shadow-md shadow-black text-black">
+            <div className="w-full max-w-6xl h-auto py-6 px-8 rounded-lg flex justify-center items-center flex-col gap-y-6 bg-gradient-to-br from-red-300 via-cyan-200 to-red-300 shadow-md shadow-black text-black">
                 <h3 className={`text-2xl text-center ${roboto_italic.className} uppercase`}>value-added services</h3>
                 
                 <p className={`mx-auto text-lg text-center ${roboto.className}`}>
@@ -133,7 +131,7 @@ export default function Home() {
             </div>
         </div>
 
-        <div className={`w-full min-h-96 ${theme === "light" ? "bg-black text-white" : "bg-white text-black"} flex flex-col p-12 gap-12`}>
+        <div className={`w-full min-h-96 ${theme === "light" ? "bg-black text-white" : "bg-white text-black"} flex flex-col p-12 py-24 gap-20`}>
             <h2 className={`text-6xl ${racing_sans_one.className} uppercase text-center`}>vision & mission</h2>
 
             <div className="w-full h-full grid md:grid-cols-2 max-md:grid-rows-2">
@@ -159,13 +157,13 @@ export default function Home() {
             </div>
         </div>
 
-        <div className={`w-full min-h-96 flex flex-col p-12 gap-12`}>
+        <div className={`w-full min-h-96 flex flex-col p-12 py-24 gap-20`}>
             <h2 className={`text-6xl ${racing_sans_one.className} uppercase text-center`}>our value pillars</h2>
 
             <div className="w-full h-full flex flex-row gap-8 flex-wrap justify-center items-center">
                 {
                     valuePillars.map((pillar, index) => (
-                        <div key={index} className={`w-96 h-40 border-4 ${pillar.border} rounded-full flex flex-row shadow-lg`}>
+                        <div key={index} className={`w-96 h-40 border-4 ${pillar.border} rounded-full flex flex-row shadow-lg hover:scale-105 transition-transform duration-200`}>
                             <div className={`w-30 h-full ${pillar.BGColor} rounded-l-full flex flex-col justify-center items-center p-8 gap-8`}>
                                 <Image src={pillar.icon} alt={pillar.title} className={`w-16 h-16 ${theme === "light" ? "invert-100" : "invert-0"}`} />
                             </div>
@@ -183,7 +181,7 @@ export default function Home() {
             </div>
         </div>
 
-        <div className="w-full min-h-96 bg-cyan-200 flex flex-col p-12 pb-20 gap-12" id="our-customers" ref={customerSectionRef}>
+        <div className="w-full min-h-96 bg-cyan-200 flex flex-col p-12 py-24 pb-20 gap-20" id="our-customers" ref={customerSectionRef}>
             <h2 className={`text-6xl text-black ${racing_sans_one.className} uppercase text-center`}>our customers</h2>
 
             <div className="w-full h-full flex flex-row gap-20 justify-center items-center flex-wrap">

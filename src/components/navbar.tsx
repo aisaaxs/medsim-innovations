@@ -51,7 +51,7 @@ export default function Navbar() {
     if (!hasMounted) return null;
 
     return (
-        <div className={`w-full min-h-18 max-h-18 ${theme === "light" ? "bg-white text-black" : "bg-black text-white"} flex flex-row justify-start items-center py-4 px-6 gap-16 z-50`}>
+        <div className={`w-full min-h-18 max-h-18 ${theme === "light" ? "bg-white text-black shadow-black" : "bg-black text-white shadow-white"} shadow-sm flex flex-row justify-start items-center py-4 px-6 gap-16 z-50 fixed top-0 left-0`}>
             <Link href="https://www.medsiminnovations.com" className="w-auto h-full flex flex-row justify-center items-center whitespace-nowrap gap-4 cursor-pointer">
                 <Image src={MedSimInnovationsLogo} alt="MedSim Innovations Logo" className="w-12 h-12" />
 
@@ -64,7 +64,7 @@ export default function Navbar() {
                 </h1>
             </Link>
 
-            <div className="w-auto h-full ml-auto flex flex-row justify-center items-center gap-6 xl:visible max-xl:hidden">
+            <div className="w-auto h-full ml-auto flex flex-row justify-center items-center gap-6 lg:visible max-lg:hidden">
                 {
                     navLinks.map((link, index) => {
                         return (
@@ -74,23 +74,27 @@ export default function Navbar() {
                 }
             </div>
 
-            <div className="w-auto h-full flex flex-row justify-center items-center gap-4 xl:visible max-xl:hidden">
-                <Link href="/login" className={`bg-blue-500 hover:bg-blue-600 text-white px-4 py-1 ${roboto.className} capitalize text-lg rounded-xs`}>login</Link>
+            {/*<div className="w-auto h-full flex flex-row justify-center items-center gap-4 xl:visible max-xl:hidden">
+                <Link href="/login" className={`bg-blue-500 hover:bg-blue-600 text-white px-4 py-1 ${roboto.className} capitalize text-lg rounded-xs`}>
+                    login
+                </Link>
 
-                <Link href="/signup" className={`bg-green-500 hover:bg-green-600 text-white px-4 py-1 ${roboto.className} capitalize text-lg rounded-xs`}>signup</Link>
-            </div>
+                <Link href="/signup" className={`bg-green-500 hover:bg-green-600 text-white px-4 py-1 ${roboto.className} capitalize text-lg rounded-xs`}>
+                    signup
+                </Link>
+            </div>*/}
 
-            <div className="w-auto h-full flex justify-center items-center xl:visible max-xl:hidden">
+            <div className="w-auto h-full flex justify-center items-center lg:visible max-lg:hidden">
                 <Image src={theme === "light" ? sunIcon : moonIcon} alt="Light Mode" className={`w-10 h-10 cursor-pointer ${theme === "light" ? "invert-0" : "invert-100"} hover:bg-black/10 p-2 rounded-xs`} onClick={() => {theme === "light" ? setTheme("dark") : setTheme("light")}} />
             </div>
 
-            <div className="w-auto h-full flex justify-center items-center ml-auto xl:hidden max-xl:visible">
+            <div className="w-auto h-full flex justify-center items-center ml-auto lg:hidden max-lg:visible">
                 <Image src={barsIcon} alt="Navigation Menu" className={`w-10 h-10 cursor-pointer ${theme === "light" ? "invert-0" : "invert-100"} hover:bg-black/10 p-2 rounded-xs`} onClick={() => setShowSidebar(true)} />
             </div>
 
             {
                 showSidebar && (
-                    <div className={`absolute w-screen h-screen top-0 left-0 ${theme === "light" ? "bg-white" : "bg-black"} flex flex-col xl:hidden`}>
+                    <div className={`absolute w-screen h-screen top-0 left-0 ${theme === "light" ? "bg-white" : "bg-black"} flex flex-col lg:hidden`}>
                         <div className={`w-auto mi-h-18 max-h-18 flex flex-row justify-start items-center py-4 px-6 border-b-1 ${theme === "light" ? "border-black" : "border-white"}`}>
                             <h1 className={`${audiowide.className} text-3xl capitalize`}>
                                 menu
@@ -115,13 +119,13 @@ export default function Navbar() {
                             toggle dark mode
                         </div>
 
-                        <Link href="/login" className={`w-full h-16 mt-auto border-t-1 flex justify-start items-center p-4 ${roboto.className} text-lg bg-blue-500 hover:bg-blue-600 border-blue-500 text-white capitalize`}>
+                        {/*<Link href="/login" className={`w-full h-16 mt-auto border-t-1 flex justify-start items-center p-4 ${roboto.className} text-lg bg-blue-500 hover:bg-blue-600 border-blue-500 text-white capitalize`}>
                             login
                         </Link>
 
                         <Link href="/login" className={`w-full h-16 border-t-1 flex justify-start items-center p-4 ${roboto.className} text-lg bg-green-500 hover:bg-green-600 border-green-500 text-white capitalize`}>
                             signup
-                        </Link>
+                        </Link>*/}
                     </div>
                 )
             }

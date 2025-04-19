@@ -92,14 +92,14 @@ export default function AboutUs() {
             <div className="absolute inset-0 bg-gray-900 opacity-20"></div>
             
             <div className={`absolute inset-0 flex flex-col justify-center items-center text-center text-white px-6 py-8 ${racing_sans_one.className} uppercase`}>
-                <h1 className="lg:text-10xl md:text-9xl text-8xl font-bold leading-tight w-full capitalize text-center">
+                <h1 className="lg:text-8xl md:text-7xl text-6xl font-bold leading-tight w-full capitalize text-center">
                     about us
                 </h1>
             </div>
         </div>
 
         <div className="w-full h-auto p-12 py-24 flex flex-col justify-center items-center gap-16">
-            <h2 className={`text-6xl ${racing_sans_one.className} uppercase text-center`}>our background</h2>
+            <h2 className={`md:text-6xl sm:text-5xl max-sm:text-4xl ${racing_sans_one.className} uppercase text-center`}>our background</h2>
 
             <p className={`max-w-6xl mx-auto text-lg text-center ${roboto.className}`}>
                 At MedSim Innovations, we are committed to enhancing patient safety and improving medical education through affordable, state-of-the-art simulation technology. Our advanced medical simulators and training equipment allow healthcare professionals to develop their skills in a safe, controlled environment, reducing the risk of real-world errors.
@@ -132,7 +132,7 @@ export default function AboutUs() {
         </div>
 
         <div className={`w-full min-h-96 ${theme === "light" ? "bg-black text-white" : "bg-white text-black"} flex flex-col p-12 py-24 gap-20`}>
-            <h2 className={`text-6xl ${racing_sans_one.className} uppercase text-center`}>vision & mission</h2>
+            <h2 className={`md:text-6xl sm:text-5xl max-sm:text-4xl ${racing_sans_one.className} uppercase text-center`}>vision & mission</h2>
 
             <div className="w-full h-full grid md:grid-cols-2 max-md:grid-rows-2">
                 <div className="w-full h-full p-4">
@@ -158,23 +158,25 @@ export default function AboutUs() {
         </div>
 
         <div className={`w-full min-h-96 flex flex-col p-12 py-24 gap-20`}>
-            <h2 className={`text-6xl ${racing_sans_one.className} uppercase text-center`}>our value pillars</h2>
+            <h2 className={`md:text-6xl sm:text-5xl max-sm:text-4xl ${racing_sans_one.className} uppercase text-center`}>our value pillars</h2>
 
             <div className="w-full h-full flex flex-row gap-8 flex-wrap justify-center items-center">
                 {
                     valuePillars.map((pillar, index) => (
-                        <div key={index} className={`w-96 h-40 border-4 ${pillar.border} rounded-full flex flex-row shadow-lg hover:scale-105 transition-transform duration-200`}>
-                            <div className={`w-30 h-full ${pillar.BGColor} rounded-l-full flex flex-col justify-center items-center p-8 gap-8`}>
-                                <Image src={pillar.icon} alt={pillar.title} className={`w-16 h-16 ${theme === "light" ? "invert-100" : "invert-0"}`} />
+                        <div key={index} className={`w-auto max-w-[400px] min-h-52 border-4 ${pillar.border} rounded-lg grid grid-cols-[100px_auto] hover:scale-105 transition-transform duration-200`}>
+                            <div className={`w-full h-full flex justify-center items-center p-8 ${pillar.BGColor}`}>
+                                <Image
+                                    src={pillar.icon}
+                                    alt={pillar.title}
+                                    className={`w-20 h-20 ${theme === "light" ? "invert-100" : "invert-0"}`}
+                                />
                             </div>
 
                             <div className="w-full h-full flex flex-col justify-start items-start p-4 gap-4">
-                                <h3 className={`text-2xl ${roboto_italic.className}`}>{pillar.title}</h3>
-                                
-                                <p className={`text-sm ${roboto.className}`}>
-                                    {pillar.text}
-                                </p>
-                            </div>
+                                <h4 className={`${roboto_italic.className} text-xl`}>{pillar.title}</h4>
+
+                                <p className={`${roboto.className} text-lg`}>{pillar.text}</p>
+                            </div>  
                         </div>
                     ))
                 }
@@ -182,7 +184,7 @@ export default function AboutUs() {
         </div>
 
         <div className="w-full min-h-96 bg-cyan-200 flex flex-col p-12 py-24 pb-20 gap-20" id="our-customers" ref={customerSectionRef}>
-            <h2 className={`text-6xl text-black ${racing_sans_one.className} uppercase text-center`}>our customers</h2>
+            <h2 className={`md:text-6xl sm:text-5xl max-sm:text-4xl text-black ${racing_sans_one.className} uppercase text-center`}>our customers</h2>
 
             <div className="w-full h-full flex flex-row gap-20 justify-center items-center flex-wrap">
                 {customers.map((customer, index) => (

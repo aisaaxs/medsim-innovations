@@ -12,6 +12,7 @@ import barsIcon from "../../public/icons/bars-solid.svg";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import xMarkIcon from "../../public/icons/xmark-solid.svg";
+import { useRouter } from "next/navigation";
 
 const audiowide = Audiowide({
     weight: '400',
@@ -47,6 +48,7 @@ export default function Navbar() {
     const hasMounted = useHasMounted();
     const pathname = usePathname();
     const [showSidebar, setShowSidebar] = useState(false);
+    const router = useRouter();
 
     if (!hasMounted) return null;
 
@@ -108,7 +110,7 @@ export default function Navbar() {
                             {
                                 navLinks.map((link, index) => {
                                     return (
-                                        <Link key={index} href={link.href} className={`w-full h-16 border-b-1 flex justify-start items-center p-4 ${roboto.className} text-lg capitalize ${pathname === link.href ? `${theme === "light" ? "bg-black text-white" : "bg-white text-black"}` : `${theme === "light" ? "hover:bg-black/20" : "hover:bg-white/20"}`}`}>{link.label}</Link>
+                                        <Link key={index}  onClick={() => {setShowSidebar(false); router.push(link.href);}} href={link.href} className={`w-full h-16 border-b-1 flex justify-start items-center p-4 ${roboto.className} text-lg capitalize ${pathname === link.href ? `${theme === "light" ? "bg-black text-white" : "bg-white text-black"}` : `${theme === "light" ? "hover:bg-black/20" : "hover:bg-white/20"}`}`}>{link.label}</Link>
                                     )
                                 })
                             }

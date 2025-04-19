@@ -4,10 +4,6 @@ import { notFound } from "next/navigation";
 import ProductPageClient from "../../../components/productPageClient";
 import { Product } from "@prisma/client";
 
-interface Props {
-  params: { slug: string };
-}
-
 export async function generateStaticParams() {
   const products = await prisma.product.findMany({
     select: { slug: true },

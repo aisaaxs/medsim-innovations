@@ -132,12 +132,12 @@ export default function Home() {
       </div>
 
       <div className="w-full h-auto p-12 flex flex-col justify-center items-center gap-12">
-        <h2 className={`text-6xl ${racing_sans_one.className} uppercase text-center`}>Why Choose Us</h2>
+        <h2 className={`md:text-6xl sm:text-5xl max-sm:text-4xl ${racing_sans_one.className} uppercase text-center`}>Why Choose Us</h2>
 
         <div className="w-full h-auto flex flex-row justify-center items-center gap-8 flex-wrap">
           {
             whyMedSimFeatures.map((feature, index) => (
-              <div key={index} className={`min-w-96 max-w-96 h-80 p-8 flex flex-col justify-start items-center text-center border-2 rounded-lg hover:scale-105 transition-all duration-200 gap-4`}>
+              <div key={index} className={`w-full max-w-96 min-h-80 h-auto p-8 flex flex-col justify-start items-center text-center border-2 rounded-lg hover:scale-105 transition-all duration-200 gap-4`}>
                 <Image src={feature.icon} alt="Icon" className={`w-16 h-16 ${theme === "light" ? "invert-0" : "invert-100"}`} />
                 
                 <h3 className={`text-2xl mb-4 ${roboto.className} font-bold`}>{feature.title}</h3>

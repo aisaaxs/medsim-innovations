@@ -66,7 +66,7 @@ export default function Products() {
                 <div className="absolute inset-0 bg-gray-900 opacity-20"></div>
                 
                 <div className={`absolute inset-0 flex flex-col justify-center items-center text-center text-white px-6 py-8 ${racing_sans_one.className} uppercase`}>
-                    <h1 className="lg:text-10xl md:text-9xl text-8xl font-bold leading-tight w-full capitalize text-center">
+                    <h1 className="lg:text-8xl md:text-7xl text-6xl font-bold leading-tight w-full capitalize text-center">
                         our products
                     </h1>
                 </div>

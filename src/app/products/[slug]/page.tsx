@@ -1,10 +1,15 @@
-// src/app/products/[slug]/page.tsx
-
+import { Metadata } from "next";
 import { prisma } from "@/lib/prisma";
 import { notFound } from "next/navigation";
 import ProductPageClient from "../../../components/productPageClient";
 import { Product } from "@prisma/client";
-import { Metadata } from "next";
+
+// ✅ Correct type for route params in Next.js App Router
+type PageProps = {
+  params: {
+    slug: string;
+  };
+};
 
 // Generate static paths for all products
 export async function generateStaticParams() {
@@ -18,11 +23,7 @@ export async function generateStaticParams() {
 }
 
 // Generate dynamic metadata per product
-export async function generateMetadata({
-  params,
-}: {
-  params: { slug: string };
-}): Promise<Metadata> {
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const product = await prisma.product.findUnique({
     where: { slug: params.slug },
   });
@@ -36,11 +37,7 @@ export async function generateMetadata({
 }
 
 // Page component
-export default async function ProductPage({
-  params,
-}: {
-  params: { slug: string };
-}) {
+export default async function ProductPage({ params }: PageProps) {
   const product: Product | null = await prisma.product.findUnique({
     where: { slug: params.slug },
   });

@@ -163,12 +163,12 @@ export default function AboutUs() {
             <div className="w-full h-full flex flex-row gap-8 flex-wrap justify-center items-center">
                 {
                     valuePillars.map((pillar, index) => (
-                        <div key={index} className={`w-96 h-40 border-4 ${pillar.border} rounded-full flex flex-row shadow-lg hover:scale-105 transition-transform duration-200`}>
-                            <div className={`w-30 h-full ${pillar.BGColor} rounded-l-full flex flex-col justify-center items-center p-8 gap-8`}>
-                                <Image src={pillar.icon} alt={pillar.title} className={`w-16 h-16 ${theme === "light" ? "invert-100" : "invert-0"}`} />
+                        <div key={index} className={`w-96 h-auto border-4 ${pillar.border} rounded-xl grid grid-cols-[30%_auto] shadow-lg hover:scale-105 transition-transform duration-200`}>
+                            <div className={`w-full h-full ${pillar.BGColor} flex flex-col justify-center items-center p-8 gap-8`}>
+                                <Image src={pillar.icon} alt={pillar.title} className={`w-16 h-full ${theme === "light" ? "invert-100" : "invert-0"}`} />
                             </div>
 
-                            <div className="w-full h-full flex flex-col justify-start items-start p-4 gap-4">
+                            <div className="w-full h-full flex flex-col justify-center items-start p-4 gap-4">
                                 <h3 className={`text-2xl ${roboto_italic.className}`}>{pillar.title}</h3>
                                 
                                 <p className={`text-sm ${roboto.className}`}>

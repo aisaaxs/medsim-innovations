@@ -106,7 +106,7 @@ export default function Footer() {
                     <div className="w-full h-auto flex flex-row gap-4 lg:justify-start max-lg:justify-center items-center">
                         <Image src={MedSimInnovationsLogo} alt="MedSim Innovations Logo" className="w-12 h-12 max-lg:hidden lg:visible" />
 
-                        <h1 className={`${audiowide.className} text-3xl text-left`}>
+                        <h1 className={`${audiowide.className} text-3xl max-lg:text-center lg:text-left`}>
                             MedSim Innovations
                         </h1>
                     </div>
